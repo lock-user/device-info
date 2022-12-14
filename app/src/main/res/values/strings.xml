@@ -4,10 +4,19 @@
     <string name="app_name">기기 정보</string>
     <string name="app_eng_name">Device Info</string>
 
+    <!-- view -->
+    <string name="phone_number">전화번호</string>
+    <string name="device_brand">휴대폰 기종</string>
+    <string name="android_id">안드로이드 ID</string>
+    <string name="android_version">안드로이드 버전</string>
+
+    <!-- button -->
     <string name="setting">설정</string>
     <string name="close">닫기</string>
 
     <!-- permission -->
     <string name="permission_denied_message">[설정] > [권한]에서 권한을 허용하시오.</string>
+
+    <!-- sample -->
 
 </resources>
