@@ -17,6 +17,7 @@ class PermissionUtils {
      */
     suspend fun checkPermission(lifecycleOwner: LifecycleOwner, onGranted: () -> Unit) {
         val permissionResult = TedPermission.create().setPermissions(
+            Manifest.permission.READ_PHONE_NUMBERS,
             Manifest.permission.READ_PHONE_STATE
         )
             .setDeniedMessage(lifecycleOwner.lifeCycleContext.getString(R.string.permission_denied_message))
