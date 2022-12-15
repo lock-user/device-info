@@ -6,6 +6,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import org.koin.androidx.fragment.android.setupKoinFragmentFactory
 
 abstract class BaseCompatActivity<T : ViewDataBinding> : AppCompatActivity() {
 
@@ -14,6 +15,7 @@ abstract class BaseCompatActivity<T : ViewDataBinding> : AppCompatActivity() {
     abstract fun getLayoutId(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setupKoinFragmentFactory()
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, getLayoutId())

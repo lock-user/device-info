@@ -30,6 +30,13 @@ class SplashActivity : BaseCompatActivity<ActivitySplashBinding>() {
     }
 
     /**
+     * 뒤로가기 버튼 비활성화
+     */
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
+
+    /**
      * 권한 초기화
      */
     private fun initPermission() = CoroutineScope(Dispatchers.Main).launch {
