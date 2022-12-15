@@ -19,4 +19,10 @@ class MainViewModel(
     private val _phoneNumber: MutableLiveData<String> = MutableLiveData(deviceUtils.phoneNumber)
     val phoneNumber: LiveData<String> = _phoneNumber
 
+    /**
+     * 디바이스 브랜드
+     */
+    private val _deviceBrand: MutableLiveData<String> = MutableLiveData(deviceUtils.brand)
+    val deviceBrand: LiveData<String> = _deviceBrand
+
 }

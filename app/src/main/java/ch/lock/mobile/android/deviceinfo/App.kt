@@ -42,5 +42,4 @@ class App: Application() {
         koin.loadModules(AppModule.getModules())
     }
 
-
 }
