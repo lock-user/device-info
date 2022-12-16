@@ -49,9 +49,35 @@
         <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/telecom"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/telecom_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.telecom}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/contour_telecom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/device_brand"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
@@ -66,6 +92,33 @@
 
         <View
             android:id="@+id/contour_deviceBrand"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/android_version"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/osVersion_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.androidVersion}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_android_version" />
+
+        <View
+            android:id="@+id/contour_osVersion"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"

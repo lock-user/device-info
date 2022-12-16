@@ -6,6 +6,7 @@
 
     <!-- view -->
     <string name="phone_number">전화번호</string>
+    <string name="telecom">통신사</string>
     <string name="device_brand">휴대폰 기종</string>
     <string name="android_id">안드로이드 ID</string>
     <string name="android_version">안드로이드 버전</string>
@@ -18,6 +19,8 @@
     <string name="permission_denied_message">[설정] > [권한]에서 권한을 허용하시오.</string>
 
     <!-- sample -->
+    <string name="sample_device_brand">Galaxy A13</string>
+    <string name="sample_android_version">13</string>
     <string name="sample_android_id">1234567890abcdef</string>
 
 </resources>

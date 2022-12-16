@@ -1,9 +1,11 @@
 package ch.lock.mobile.android.deviceinfo.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.base.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
+import ch.lock.mobile.android.deviceinfo.utils.DeviceUtils
 
 class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
 

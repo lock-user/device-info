@@ -20,9 +20,21 @@ class MainViewModel(
     val phoneNumber: LiveData<String> = _phoneNumber
 
     /**
+     * 통신사
+     */
+    private val _telecom: MutableLiveData<String> = MutableLiveData(deviceUtils.telecom)
+    val telecom: LiveData<String> = _telecom
+
+    /**
      * 디바이스 브랜드
      */
     private val _deviceBrand: MutableLiveData<String> = MutableLiveData(deviceUtils.brand)
     val deviceBrand: LiveData<String> = _deviceBrand
+
+    /**
+     * 안드로이드 버전
+     */
+    private val _androidVersion: MutableLiveData<String> = MutableLiveData(deviceUtils.os)
+    val androidVersion: LiveData<String> = _androidVersion
 
 }
