@@ -17,11 +17,11 @@ open class DeviceUtils(
         const val TAG = "DeviceUtil"
     }
 
-    protected val telephonyManager: TelephonyManager by lazy {
+    private val telephonyManager: TelephonyManager by lazy {
         applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
     }
 
-    protected val subscriptionManager: SubscriptionManager
+    private val subscriptionManager: SubscriptionManager
         @RequiresApi(value = Build.VERSION_CODES.LOLLIPOP_MR1)
         get() = applicationContext.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE) as SubscriptionManager
 
@@ -67,7 +67,6 @@ open class DeviceUtils(
         } catch (e: Exception) {
             ""
         }
-
 
     /**
      * 안드로이드 ~7: 영구 유지

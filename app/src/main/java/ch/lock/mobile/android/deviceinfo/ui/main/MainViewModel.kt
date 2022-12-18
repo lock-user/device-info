@@ -37,4 +37,10 @@ class MainViewModel(
     private val _androidVersion: MutableLiveData<String> = MutableLiveData(deviceUtils.os)
     val androidVersion: LiveData<String> = _androidVersion
 
+    /**
+     * 안드로이드 id
+     */
+    private val _androidId: MutableLiveData<String> = MutableLiveData(deviceUtils.androidId)
+    val androidId: LiveData<String> = _androidId
+
 }

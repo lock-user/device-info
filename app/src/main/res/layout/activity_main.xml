@@ -125,6 +125,33 @@
             android:layout_marginBottom="10dp"
             android:background="@color/black" />
 
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/android_id"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/androidId_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.androidId}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_android_id" />
+
+        <View
+            android:id="@+id/contour_androidId"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
     </LinearLayout>
 
 </layout>
