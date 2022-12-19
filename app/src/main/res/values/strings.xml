@@ -7,9 +7,12 @@
     <!-- view -->
     <string name="phone_number">전화번호</string>
     <string name="telecom">통신사</string>
-    <string name="device_brand">휴대폰 기종</string>
-    <string name="android_id">안드로이드 ID</string>
+    <string name="device_brand">브랜드명</string>
+    <string name="device_model">휴대폰 모델명</string>
     <string name="android_version">안드로이드 버전</string>
+    <string name="android_id">안드로이드 ID</string>
+    <string name="imei">IMEI</string>
+    <string name="usim_serial_number">유심 시리얼 번호</string>
 
     <!-- button -->
     <string name="setting">설정</string>
@@ -19,8 +22,12 @@
     <string name="permission_denied_message">[설정] > [권한]에서 권한을 허용하시오.</string>
 
     <!-- sample -->
-    <string name="sample_device_brand">Galaxy A13</string>
+    <string name="sample_phone_number">+821012345678</string>
+    <string name="sample_telecom">Android</string>
+    <string name="sample_device_brand">google</string>
+    <string name="sample_device_model">sdk_gphone_arm64</string>
     <string name="sample_android_version">13</string>
     <string name="sample_android_id">1234567890abcdef</string>
+    <string name="sample_imei">123456789012345</string>
 
 </resources>

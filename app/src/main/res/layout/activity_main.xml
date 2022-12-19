@@ -36,7 +36,8 @@
             android:text="@{viewModel.phoneNumber}"
             android:textColor="@color/black"
             android:textIsSelectable="true"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            tools:text="@string/sample_phone_number" />
 
         <View
             android:id="@+id/contour_phoneNumber"
@@ -62,7 +63,8 @@
             android:text="@{viewModel.telecom}"
             android:textColor="@color/black"
             android:textIsSelectable="true"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            tools:text="@string/sample_telecom" />
 
         <View
             android:id="@+id/contour_telecom"
@@ -88,10 +90,38 @@
             android:text="@{viewModel.deviceBrand}"
             android:textColor="@color/black"
             android:textIsSelectable="true"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            tools:text="@string/sample_device_brand" />
 
         <View
             android:id="@+id/contour_deviceBrand"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_model"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/deviceModel_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.deviceModel}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_device_model" />
+
+        <View
+            android:id="@+id/contour_deviceModel"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
@@ -146,6 +176,60 @@
 
         <View
             android:id="@+id/contour_androidId"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imei"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/imei_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.imei}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_android_id" />
+
+        <View
+            android:id="@+id/contour_imei"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usim_serial_number"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/usimNumber_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.androidId}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_imei" />
+
+        <View
+            android:id="@+id/contour_usimNumber"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"

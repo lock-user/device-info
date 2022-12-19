@@ -32,6 +32,12 @@ class MainViewModel(
     val deviceBrand: LiveData<String> = _deviceBrand
 
     /**
+     * 디바이스 모델
+     */
+    private val _deviceModel: MutableLiveData<String> = MutableLiveData(deviceUtils.model)
+    val deviceModel: LiveData<String> = _deviceModel
+
+    /**
      * 안드로이드 버전
      */
     private val _androidVersion: MutableLiveData<String> = MutableLiveData(deviceUtils.os)
@@ -42,5 +48,17 @@ class MainViewModel(
      */
     private val _androidId: MutableLiveData<String> = MutableLiveData(deviceUtils.androidId)
     val androidId: LiveData<String> = _androidId
+
+    /**
+     * imei
+     */
+    private val _imei: MutableLiveData<String> = MutableLiveData(deviceUtils.imei)
+    val imei: LiveData<String> = _imei
+
+    /**
+     * USIM Serial 번호
+     */
+    private val _usimNumber: MutableLiveData<String> = MutableLiveData(deviceUtils.usimNumber)
+    val usimNumber: LiveData<String> = _usimNumber
 
 }
