@@ -24,6 +24,10 @@ android {
             minifyEnabled false
             zipAlignEnabled false
             shrinkResources false
+            aaptOptions.cruncherEnabled = false
+
+            versionNameSuffix "-dbg"
+            applicationIdSuffix ".dbg"
 
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -32,6 +36,7 @@ android {
             minifyEnabled true
             zipAlignEnabled true
             shrinkResources true
+            aaptOptions.cruncherEnabled = true
 
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
