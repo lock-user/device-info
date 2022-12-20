@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <merge
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headerTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="53dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:text="@string/app_eng_name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/headerTitleBarrier"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_min="wrap"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/headerBackImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/headerBackImage"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:padding="15dp"
+            android:src="@drawable/header_back_button"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/headerTitleBarrier"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/headerTitleBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="headerBackImage, headerTitleTextView" />
+
+        <TextView
+            android:id="@+id/headerNextTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/header_button_background"
+            android:gravity="center"
+            android:minWidth="70dp"
+            android:text="@string/button"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/headerTitleBarrier"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_min="wrap"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </merge>
+
+</layout>
