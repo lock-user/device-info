@@ -2,6 +2,7 @@ package ch.lock.mobile.android.deviceinfo.ui.main
 
 import android.os.Bundle
 import android.util.Log
+import ch.lock.mobile.android.deviceinfo.App
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.base.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
@@ -28,7 +29,7 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
      * 뒤로가기 버튼 비활성화
      */
     override fun onBackPressed() {
-        //super.onBackPressed()
+        App.exit(this@MainActivity)
     }
 
     private fun initBinding() {
