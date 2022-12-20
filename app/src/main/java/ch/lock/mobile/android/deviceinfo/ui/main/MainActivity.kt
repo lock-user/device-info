@@ -26,7 +26,7 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
     }
 
     /**
-     * 뒤로가기 버튼 비활성화
+     * 뒤로가기 버튼 클릭 시 앱 죽임.
      */
     override fun onBackPressed() {
         App.exit(this@MainActivity)
