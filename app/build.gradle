@@ -18,6 +18,17 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        keystore {
+            def keystoreProperties = loadKeystore("./app/keystore/keystore.properties")
+
+            storeFile file(keystoreProperties.storeFile)
+            storePassword keystoreProperties.storePassword
+            keyAlias keystoreProperties.keyAlias
+            keyPassword keystoreProperties.keyPassword
+        }
+    }
+
     buildTypes {
         debug {
             debuggable true
@@ -26,10 +37,13 @@ android {
             shrinkResources false
             aaptOptions.cruncherEnabled = false
 
+            signingConfig signingConfigs.keystore
+
             versionNameSuffix "-dbg"
             applicationIdSuffix ".dbg"
 
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            createApk()
         }
         release {
             debuggable false
@@ -38,7 +52,10 @@ android {
             shrinkResources true
             aaptOptions.cruncherEnabled = true
 
+            signingConfig signingConfigs.keystore
+
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            createApk()
         }
     }
     buildFeatures {
@@ -57,6 +74,27 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+def loadKeystore(filePath) {
+    def properties = new Properties()
+
+    properties.load(new FileInputStream(rootProject.file(filePath)))
+    return properties
+}
+
+def createApk() {
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (outputFileName.endsWith('.apk')) {
+                def date = new Date().format('yyyyMMdd')
+                def dir = "./apk/" + variant.versionName + "(" + variant.versionCode + ")"
+                def apk = variant.applicationId + "-" + variant.versionName + "-" + date + ".apk"
+
+                outputFileName = new File(dir, apk)
+            }
+        }
     }
 }
 
