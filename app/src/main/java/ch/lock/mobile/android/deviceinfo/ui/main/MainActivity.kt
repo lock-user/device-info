@@ -26,10 +26,10 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
     }
 
     /**
-     * 뒤로가기 버튼 클릭 시 앱 죽임.
+     * 뒤로가기 버튼 클릭 시 앱 백그라운드로 보냄.
      */
     override fun onBackPressed() {
-        App.exit(this@MainActivity)
+        moveTaskToBack(true)
     }
 
     private fun initBinding() {
