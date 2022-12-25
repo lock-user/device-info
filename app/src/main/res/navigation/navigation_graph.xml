@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lock_navigation"
+    app:startDestination="@id/usimInfoFragment">
+
+    <!-- Usim Info Fragment -->
+    <fragment
+        android:id="@+id/usimInfoFragment"
+        android:name="ch.lock.mobile.android.deviceinfo.ui.main.usiminfo.UsimInfoFragment"
+        android:label="UsimInfoFragment" />
+
+    <action
+        android:id="@+id/action_global_usimInfoFragment"
+        app:destination="@id/usimInfoFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/usimInfoFragment"
+        app:popUpToInclusive="false"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
+    <!-- Device Info Activity -->
+    <activity
+        android:id="@+id/deviceInfoActivity"
+        android:name="ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo.DeviceInfoActivity"
+        android:label="DeviceInfoActivity" />
+
+    <action
+        android:id="@+id/action_global_deviceInfoActivity"
+        app:destination="@id/deviceInfoActivity"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/deviceInfoActivity"
+        app:popUpToInclusive="false"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
+</navigation>

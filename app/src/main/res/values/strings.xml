@@ -5,11 +5,14 @@
     <string name="app_eng_name">Device Info</string>
 
     <!-- view -->
+    <string name="usim_info">유심 정보</string>
+    <string name="device_info">디바이스 정보</string>
     <string name="phone_number">전화번호</string>
     <string name="telecom">통신사</string>
     <string name="device_brand">브랜드명</string>
     <string name="device_model">휴대폰 모델명</string>
     <string name="android_version">안드로이드 버전</string>
+    <string name="android_sdk_version">안드로이드 SDK 버전</string>
     <string name="android_id">안드로이드 ID</string>
     <string name="imei">IMEI</string>
     <string name="usim_serial_number">유심 시리얼 번호</string>
@@ -28,6 +31,7 @@
     <string name="sample_device_brand">google</string>
     <string name="sample_device_model">sdk_gphone_arm64</string>
     <string name="sample_android_version">13</string>
+    <string name="sample_android_sdk_version">33</string>
     <string name="sample_android_id">1234567890abcdef</string>
     <string name="sample_imei">123456789012345</string>
 

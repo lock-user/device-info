@@ -44,6 +44,12 @@ open class DeviceUtils(
         get() = Build.VERSION.RELEASE
 
     /**
+     * @return 안드로이드 OS API Level
+     */
+    open val apiLevel: Int
+        get() = Build.VERSION.SDK_INT
+
+    /**
      * @return 디바이스 IMEI
      */
     open val imei: String

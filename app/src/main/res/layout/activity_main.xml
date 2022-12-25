@@ -6,236 +6,114 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="ch.lock.mobile.android.deviceinfo.ui.main.MainViewModel" />
+            name="activity"
+            type="ch.lock.mobile.android.deviceinfo.ui.main.MainActivity" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/drawer"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:clickable="false"
-        android:focusable="false"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:background="@color/white"
+        tools:context=".ui.main.MainActivity">
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/phone_number"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/phoneNumber_TextView"
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.phoneNumber}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_phone_number" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <View
-            android:id="@+id/contour_phoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/telecom"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+                <View
+                    android:id="@+id/topView"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/telecom_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.telecom}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_telecom" />
+                <ImageView
+                    android:id="@+id/sideMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:src="@drawable/side_menu_button"
+                    app:layout_constraintBottom_toBottomOf="@id/topView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/topView" />
 
-        <View
-            android:id="@+id/contour_telecom"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/device_brand"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+        </com.google.android.material.navigation.NavigationView>
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/deviceBrand_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.deviceBrand}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_device_brand" />
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/navigationDl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:openDrawer="start">
 
-        <View
-            android:id="@+id/contour_deviceBrand"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_container"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/navigation_graph" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/device_model"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigationView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start">
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/deviceModel_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.deviceModel}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_device_model" />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:fillViewport="true"
+                    android:orientation="vertical">
 
-        <View
-            android:id="@+id/contour_deviceModel"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/android_version"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/navUsimInfo"
+                            style="@style/NavigationView"
+                            android:drawablePadding="15dp"
+                            android:focusable="true"
+                            android:text="@string/usim_info"
+                            app:drawableLeftCompat="@drawable/sim_card_icon" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/osVersion_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.androidVersion}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_android_version" />
+                        <TextView
+                            android:id="@+id/navDeviceInfo"
+                            style="@style/NavigationView"
+                            android:drawablePadding="15dp"
+                            android:focusable="true"
+                            android:onClick="@{() -> activity.navDeviceInfo()}"
+                            android:text="@string/device_info"
+                            app:drawableLeftCompat="@drawable/device_info_icon" />
 
-        <View
-            android:id="@+id/contour_osVersion"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+                    </LinearLayout>
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/android_id"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+                </ScrollView>
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/androidId_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.androidId}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_android_id" />
+            </com.google.android.material.navigation.NavigationView>
 
-        <View
-            android:id="@+id/contour_androidId"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+        </androidx.drawerlayout.widget.DrawerLayout>
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/imei"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/imei_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.imei}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_android_id" />
-
-        <View
-            android:id="@+id/contour_imei"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
-
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/usim_serial_number"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/usimNumber_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.androidId}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_imei" />
-
-        <View
-            android:id="@+id/contour_usimNumber"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

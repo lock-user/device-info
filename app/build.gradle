@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -122,6 +123,10 @@ dependencies {
 
     // optional - GCMNetworkManager support
     implementation "androidx.work:work-gcm:$rootProject.work_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigation_version"
 
     // optional - Test helpers
     androidTestImplementation "androidx.work:work-testing:$rootProject.work_version"

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo.DeviceInfoViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:clickable="false"
+        android:focusable="false"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!-- 디바이스 브랜드 -->
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_brand"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/deviceBrand_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.deviceBrand}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_device_brand" />
+
+        <View
+            android:id="@+id/contour_deviceBrand"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <!-- 디바이스 모델 -->
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_model"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/deviceModel_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.deviceModel}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_device_model" />
+
+        <View
+            android:id="@+id/contour_deviceModel"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <!-- 안드로이드 버전 -->
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/android_version"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/androidVersion_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.androidVersion}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_android_version" />
+
+        <View
+            android:id="@+id/contour_androidVersion"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <!-- 안드로이드 SDK 버전 -->
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/android_sdk_version"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/androidSdkVersion_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.androidApiLevel}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_android_sdk_version" />
+
+        <View
+            android:id="@+id/contour_androidSdkVersion"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <!-- 안드로이드 ID -->
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/android_id"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/androidId_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.androidId}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_android_id" />
+
+        <View
+            android:id="@+id/contour_androidId"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+        <!-- IMEI -->
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imei"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+            android:id="@+id/imei_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.imei}"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp"
+            tools:text="@string/sample_imei" />
+
+        <View
+            android:id="@+id/contour_imei"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black" />
+
+    </LinearLayout>
+
+</layout>
