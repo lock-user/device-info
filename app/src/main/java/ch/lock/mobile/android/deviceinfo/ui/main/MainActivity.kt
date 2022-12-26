@@ -55,18 +55,30 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
         }
 
         binding.navUsimInfo.setOnClickListener {
-            replaceToUsimInfo()
+            binding.navigationDl.closeDrawer(Gravity.LEFT)
+            replaceToSimInfo()
+        }
+
+        binding.navDeviceInfo.setOnClickListener {
+            binding.navigationDl.closeDrawer(Gravity.LEFT)
+            replaceToDeviceInfo()
         }
     }
 
-    private fun replaceToUsimInfo() {
+    /**
+     * move to Usim Info Fragment
+     */
+    private fun replaceToSimInfo() {
         val directions = LockNavigationDirections.actionGlobalUsimInfoFragment()
         navController.navigate(directions)
     }
 
-    fun navDeviceInfo() {
-        binding.navigationDl.closeDrawer(Gravity.LEFT)
-        ActivityUtils.getInstance().startDeviceInfoActivity(this)
+    /**
+     * move to Device Info Fragment
+     */
+    private fun replaceToDeviceInfo() {
+        val directions = LockNavigationDirections.actionGlobalDeviceInfoFragment()
+        navController.navigate(directions)
     }
 
 }

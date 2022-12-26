@@ -103,7 +103,6 @@
                             style="@style/NavigationView"
                             android:drawablePadding="15dp"
                             android:focusable="true"
-                            android:onClick="@{() -> activity.navDeviceInfo()}"
                             android:text="@string/device_info"
                             app:drawableLeftCompat="@drawable/device_info_icon" />
 

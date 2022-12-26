@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lock_navigation"
     app:startDestination="@id/usimInfoFragment">
 
@@ -13,6 +14,21 @@
     <action
         android:id="@+id/action_global_usimInfoFragment"
         app:destination="@id/usimInfoFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/usimInfoFragment"
+        app:popUpToInclusive="false"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
+    <!-- Device Info Fragment -->
+    <fragment
+        android:id="@+id/deviceInfoFragment"
+        android:name="ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo.DeviceInfoFragment"
+        android:label="DeviceInfoFragment" />
+
+    <action
+        android:id="@+id/action_global_deviceInfoFragment"
+        app:destination="@id/deviceInfoFragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/usimInfoFragment"
         app:popUpToInclusive="false"
