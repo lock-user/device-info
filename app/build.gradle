@@ -127,6 +127,7 @@ dependencies {
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigation_version"
+    implementation "androidx.navigation:navigation-runtime-ktx:$rootProject.navigation_version"
 
     // optional - Test helpers
     androidTestImplementation "androidx.work:work-testing:$rootProject.work_version"
