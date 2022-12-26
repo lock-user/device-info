@@ -19,19 +19,4 @@
         app:popUpToSaveState="true"
         app:restoreState="true" />
 
-    <!-- Device Info Activity -->
-    <activity
-        android:id="@+id/deviceInfoActivity"
-        android:name="ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo.DeviceInfoActivity"
-        android:label="DeviceInfoActivity" />
-
-    <action
-        android:id="@+id/action_global_deviceInfoActivity"
-        app:destination="@id/deviceInfoActivity"
-        app:launchSingleTop="true"
-        app:popUpTo="@id/deviceInfoActivity"
-        app:popUpToInclusive="false"
-        app:popUpToSaveState="true"
-        app:restoreState="true" />
-
 </navigation>

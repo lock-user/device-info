@@ -46,8 +46,8 @@ open class DeviceUtils(
     /**
      * @return 안드로이드 OS API Level
      */
-    open val apiLevel: Int
-        get() = Build.VERSION.SDK_INT
+    open val apiLevel: String
+        get() = Build.VERSION.SDK_INT.toString()
 
     /**
      * @return 디바이스 IMEI

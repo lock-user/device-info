@@ -34,8 +34,8 @@ class DeviceInfoViewModel(
     /**
      * 안드로이드 SDK 버전
      */
-    private val _androidApiLevel: MutableLiveData<Int> = MutableLiveData(deviceUtils.apiLevel)
-    val androidApiLevel: LiveData<Int> = _androidApiLevel
+    private val _androidApiLevel: MutableLiveData<String> = MutableLiveData(deviceUtils.apiLevel)
+    val androidApiLevel: LiveData<String> = _androidApiLevel
 
     /**
      * 안드로이드 id
