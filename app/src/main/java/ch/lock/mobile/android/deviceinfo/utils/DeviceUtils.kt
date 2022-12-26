@@ -60,9 +60,9 @@ open class DeviceUtils(
         }
 
     /**
-     * @return 디바이스 USIM Serial Number
+     * @return 디바이스 SIM Serial Number
      */
-    open val usimNumber: String
+    open val simNumber: String
         get() = try {
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 ->

@@ -26,9 +26,9 @@ class UsimInfoViewModel(
     val telecom: LiveData<String> = _telecom
 
     /**
-     * USIM Serial 번호
+     * SIM Serial 번호
      */
-    private val _usimNumber: MutableLiveData<String> = MutableLiveData(deviceUtils.usimNumber)
-    val usimNumber: LiveData<String> = _usimNumber
+    private val _simNumber: MutableLiveData<String> = MutableLiveData(deviceUtils.simNumber)
+    val simNumber: LiveData<String> = _simNumber
 
 }
