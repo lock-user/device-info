@@ -16,6 +16,8 @@
     <string name="android_id">안드로이드 ID</string>
     <string name="imei">IMEI</string>
     <string name="usim_serial_number">유심 시리얼 번호</string>
+    <string name="kernel">커널</string>
+    <string name="build_number">빌드 번호</string>
 
     <!-- button -->
     <string name="setting">설정</string>
@@ -34,5 +36,6 @@
     <string name="sample_android_sdk_version">33</string>
     <string name="sample_android_id">1234567890abcdef</string>
     <string name="sample_imei">123456789012345</string>
+    <string name="sample_kernel">Linux armv</string>
 
 </resources>

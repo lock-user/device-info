@@ -49,4 +49,16 @@ class DeviceInfoViewModel(
     private val _imei: MutableLiveData<String> = MutableLiveData(deviceUtils.imei)
     val imei: LiveData<String> = _imei
 
+    /**
+     * kernel
+     */
+    private val _kernel: MutableLiveData<String> = MutableLiveData(deviceUtils.kernel)
+    val kernel: LiveData<String> = _kernel
+
+    /**
+     * build number
+     */
+    private val _buildNumber: MutableLiveData<String> = MutableLiveData(deviceUtils.buildNumber)
+    val buildNumber: LiveData<String> = _buildNumber
+
 }

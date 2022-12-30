@@ -6,7 +6,12 @@ import android.os.Build
 import android.provider.Settings
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
+import android.text.TextUtils
 import androidx.annotation.RequiresApi
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+
 
 @SuppressLint("MissingPermission", "HardwareIds")
 open class DeviceUtils(
@@ -104,4 +109,53 @@ open class DeviceUtils(
             ""
         }
 
+    /**
+     * @return 커널
+     */
+    open val kernel: String
+        get() = try {
+            val command = Runtime.getRuntime().exec("uname -s -m", null, null)
+            var inputStream: InputStream? = null
+
+            inputStream = if (command.waitFor() == 0) {
+                command.inputStream
+            } else {
+                command.errorStream
+            }
+
+            val bufferedReader = BufferedReader(
+                InputStreamReader(inputStream),
+                1024
+            )
+            val line: String = bufferedReader.readLine()
+            bufferedReader.close()
+            line
+        } catch (e: Exception) {
+            val abis: Array<String> = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Build.SUPPORTED_ABIS
+            } else {
+                arrayOf(Build.CPU_ABI, Build.CPU_ABI2)
+            }
+            var ext = " "
+            for (abi in abis) {
+                if (TextUtils.equals(abi, "x86_64")) {
+                    ext = "amd64"
+                    break
+                } else if (TextUtils.equals(abi, "x86")) {
+                    ext = "x86"
+                    break
+                } else if (TextUtils.equals(abi, "armeabi-v7a")) {
+                    ext = "armeabi-v7a"
+                    break
+                }
+            }
+            System.getProperty("os.name") + " " + ext
+        }
+
+    /**
+     * @return 빌드번호
+     */
+    open val buildNumber: String
+        get() = Build.ID
 }
+
