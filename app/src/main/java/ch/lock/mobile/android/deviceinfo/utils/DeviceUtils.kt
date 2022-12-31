@@ -60,7 +60,7 @@ open class DeviceUtils(
         get() = try {
             telephonyManager.deviceId ?: ""
         } catch (e: Exception) {
-            ""
+            "안드로이드 10부터는 imei를 확인할 수 없습니다."
         }
 
     /**

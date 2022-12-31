@@ -31,8 +31,7 @@ open class SimUtils(
         get() = try {
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 ->
-                    subscriptionManager.activeSubscriptionInfoList?.firstOrNull()?.iccId ?: ""
-
+                    subscriptionManager.activeSubscriptionInfoList?.firstOrNull()?.iccId ?: "유심이 장착되어 있지 않습니다."
                 else -> telephonyManager.simSerialNumber ?: ""
             }
         } catch (e: Exception) {
