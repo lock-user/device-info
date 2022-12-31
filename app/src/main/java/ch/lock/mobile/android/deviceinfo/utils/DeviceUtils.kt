@@ -12,7 +12,6 @@ import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
 
-
 @SuppressLint("MissingPermission", "HardwareIds")
 open class DeviceUtils(
     private val applicationContext: Context
@@ -65,21 +64,6 @@ open class DeviceUtils(
         }
 
     /**
-     * @return 디바이스 SIM Serial Number
-     */
-    open val simNumber: String
-        get() = try {
-            when {
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 ->
-                    subscriptionManager.activeSubscriptionInfoList?.firstOrNull()?.iccId ?: ""
-
-                else -> telephonyManager.simSerialNumber ?: ""
-            }
-        } catch (e: Exception) {
-            ""
-        }
-
-    /**
      * 안드로이드 ~7: 영구 유지
      * 안드로이드 8~: 공장 초기화하면 재설정
      * @return Android ID
@@ -88,26 +72,6 @@ open class DeviceUtils(
         get() = Settings.Secure.getString(
             applicationContext.contentResolver, Settings.Secure.ANDROID_ID
         )
-
-    /**
-     * @return 통신사 정보
-     */
-    open val telecom: String
-        get() = try {
-            telephonyManager.networkOperatorName ?: ""
-        } catch (e: Exception) {
-            ""
-        }
-
-    /**
-     * @return 디바이스 전화번호
-     */
-    open val phoneNumber: String
-        get() = try {
-            telephonyManager.line1Number ?: ""
-        } catch (e: Exception) {
-            ""
-        }
 
     /**
      * @return 커널

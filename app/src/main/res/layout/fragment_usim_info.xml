@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,100 +10,107 @@
             type="ch.lock.mobile.android.deviceinfo.ui.main.usiminfo.UsimInfoViewModel" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/drawer"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:clickable="false"
-        android:focusable="false"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:background="@color/white">
 
-        <!-- 전화번호 -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/phone_number"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/phoneNumber_TextView"
+        <LinearLayout
+            android:id="@+id/drawer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.phoneNumber}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_phone_number" />
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:clickable="false"
+            android:focusable="false"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-        <View
-            android:id="@+id/contour_phoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            <!-- 전화번호 -->
+            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_number"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <!-- 통신사 -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/telecom"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+                android:id="@+id/phoneNumber_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{viewModel.phoneNumber}"
+                android:textColor="@color/black"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                tools:text="@string/sample_phone_number" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/telecom_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.telecom}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_telecom" />
+            <View
+                android:id="@+id/contour_phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/black" />
 
-        <View
-            android:id="@+id/contour_telecom"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            <!-- 통신사 -->
+            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/telecom"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <!-- usim 시리얼 번호 -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/usim_serial_number"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+                android:id="@+id/telecom_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{viewModel.telecom}"
+                android:textColor="@color/black"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                tools:text="@string/sample_telecom" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/usimNumber_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.simNumber}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_imei" />
+            <View
+                android:id="@+id/contour_telecom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/black" />
 
-        <View
-            android:id="@+id/contour_usimNumber"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            <!-- usim 시리얼 번호 -->
+            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usim_serial_number"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+                android:id="@+id/usimNumber_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{viewModel.simNumber}"
+                android:textColor="@color/black"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                tools:text="@string/sample_imei" />
+
+            <View
+                android:id="@+id/contour_usimNumber"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/black" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
