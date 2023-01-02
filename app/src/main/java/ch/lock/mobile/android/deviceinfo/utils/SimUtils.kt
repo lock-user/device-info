@@ -7,7 +7,7 @@ import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
 
-@SuppressLint("MissingPermission", "HardwareIds")
+@SuppressLint("MissingPermission", "HardwareIds", "ObsoleteSdkInt")
 open class SimUtils(
     private val applicationContext: Context,
     private val formatUtils: FormatUtils
@@ -56,7 +56,7 @@ open class SimUtils(
      */
     open val phoneNumber: String
         get() = try {
-            formatUtils.toLocalPhoneNumber(globalPhoneNumber)
+            formatUtils.toLocalPhoneNumber(globalPhoneNumber, true)
         } catch (e: Exception) {
             ""
         }
