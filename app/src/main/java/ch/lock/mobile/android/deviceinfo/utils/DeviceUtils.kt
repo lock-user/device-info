@@ -25,10 +25,6 @@ open class DeviceUtils(
         applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
     }
 
-    private val subscriptionManager: SubscriptionManager
-        @RequiresApi(value = Build.VERSION_CODES.LOLLIPOP_MR1)
-        get() = applicationContext.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE) as SubscriptionManager
-
     /**
      * @return 디바이스 모델
      */

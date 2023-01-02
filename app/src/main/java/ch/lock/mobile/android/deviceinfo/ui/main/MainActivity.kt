@@ -8,7 +8,6 @@ import ch.lock.mobile.android.deviceinfo.LockNavigationDirections
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.base.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
-import ch.lock.mobile.android.deviceinfo.utils.ActivityUtils
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
