@@ -9,7 +9,8 @@ import androidx.annotation.RequiresApi
 
 @SuppressLint("MissingPermission", "HardwareIds")
 open class SimUtils(
-    private val applicationContext: Context
+    private val applicationContext: Context,
+    private val formatUtils: FormatUtils
 ) {
 
     companion object {
@@ -31,7 +32,7 @@ open class SimUtils(
         get() = try {
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 ->
-                    subscriptionManager.activeSubscriptionInfoList?.firstOrNull()?.iccId ?: "유심이 장착되어 있지 않습니다."
+                    subscriptionManager.activeSubscriptionInfoList?.firstOrNull()?.iccId ?: ""
                 else -> telephonyManager.simSerialNumber ?: ""
             }
         } catch (e: Exception) {
@@ -49,9 +50,23 @@ open class SimUtils(
         }
 
     /**
+     * 지역 번호
+     *
      * @return 디바이스 전화번호
      */
     open val phoneNumber: String
+        get() = try {
+            formatUtils.toLocalPhoneNumber(globalPhoneNumber)
+        } catch (e: Exception) {
+            ""
+        }
+
+    /**
+     * 국제 번호
+     *
+     * @return 디바이스 전화번호
+     */
+    open val globalPhoneNumber: String
         get() = try {
             telephonyManager.line1Number ?: ""
         } catch (e: Exception) {

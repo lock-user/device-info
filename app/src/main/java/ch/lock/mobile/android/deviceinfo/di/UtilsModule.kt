@@ -14,6 +14,9 @@ object UtilsModule {
             )
         }
         single {
+            FormatUtils()
+        }
+        single {
             PermissionUtils()
         }
         single {
@@ -23,6 +26,7 @@ object UtilsModule {
         } bind ResourceProvider::class
         single {
             SimUtils(
+                get(),
                 get()
             )
         }
