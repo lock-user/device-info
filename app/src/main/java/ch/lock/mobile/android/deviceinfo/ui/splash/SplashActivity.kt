@@ -5,7 +5,7 @@ import android.os.Bundle
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.base.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivitySplashBinding
-import ch.lock.mobile.android.deviceinfo.utils.ActivityUtils
+import ch.lock.mobile.android.deviceinfo.ui.main.MainActivity
 import ch.lock.mobile.android.deviceinfo.utils.PermissionUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -41,7 +41,7 @@ class SplashActivity : BaseCompatActivity<ActivitySplashBinding>() {
      */
     private fun initPermission() = CoroutineScope(Dispatchers.Main).launch {
         permissionUtils.checkPermission(this@SplashActivity) {
-            ActivityUtils.getInstance().startMainActivity(this@SplashActivity)
+            MainActivity.intent(this@SplashActivity)
         }
     }
 

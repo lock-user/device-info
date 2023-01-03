@@ -1,5 +1,7 @@
 package ch.lock.mobile.android.deviceinfo.ui.main
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import androidx.navigation.NavController
@@ -14,6 +16,13 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
 
     companion object {
         const val TAG: String = "MainActivity"
+
+        fun createIntent(context: Context): Intent =
+            Intent(context, MainActivity::class.java).apply {}
+
+        fun intent(context: Context) = createIntent(context).also { intent ->
+            context.startActivity(intent)
+        }
     }
 
     private val viewModel: MainViewModel by viewModel()
