@@ -10,6 +10,7 @@ import ch.lock.mobile.android.deviceinfo.LockNavigationDirections
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.base.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
+import ch.lock.mobile.android.deviceinfo.ui.setting.SettingActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
@@ -87,6 +88,11 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
     private fun replaceToDeviceInfo() {
         val directions = LockNavigationDirections.actionGlobalDeviceInfoFragment()
         navController.navigate(directions)
+    }
+
+    fun navSetting() {
+        binding.navigationDl.closeDrawer(Gravity.LEFT)
+        SettingActivity.intent(this)
     }
 
 }

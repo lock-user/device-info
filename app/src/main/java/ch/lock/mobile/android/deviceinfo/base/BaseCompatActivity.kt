@@ -20,7 +20,7 @@ abstract class BaseCompatActivity<T : ViewDataBinding> : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, getLayoutId())
         binding.lifecycleOwner = this
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         // activity 내 화면 캡쳐 차단
         window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
