@@ -21,7 +21,9 @@ object ViewModelModule {
             MainViewModel()
         }
         viewModel {
-            SettingViewModel()
+            SettingViewModel(
+                get()
+            )
         }
         viewModel {
             UsimInfoViewModel(

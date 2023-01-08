@@ -37,6 +37,7 @@ object AppModule {
 
     fun getModules(): List<Module> = mutableListOf(
         INSTANCE,
+        DataStoreModule.INSTANCE,
         FragmentModule.INSTANCE,
         UtilsModule.INSTANCE,
         ViewModelModule.INSTANCE

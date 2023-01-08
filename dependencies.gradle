@@ -8,6 +8,9 @@ ext {
     // AAC - ViewModel and LiveData and Lifecycle
     lifecycle_version = '2.5.1'
 
+    // DataStore
+    dataStore_pref_version = '1.0.0'
+
     // Work
     work_version = '2.7.1'
 

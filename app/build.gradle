@@ -144,6 +144,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$rootProject.lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycle_version"
 
+    // DataStore
+    implementation "androidx.datastore:datastore-preferences:$rootProject.dataStore_pref_version"
+
     // Koin
     implementation "io.insert-koin:koin-core:$rootProject.koin_version"
     implementation "io.insert-koin:koin-android:$rootProject.koin_version"
