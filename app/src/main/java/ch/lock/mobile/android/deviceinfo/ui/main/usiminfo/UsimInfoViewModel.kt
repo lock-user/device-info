@@ -2,12 +2,12 @@ package ch.lock.mobile.android.deviceinfo.ui.main.usiminfo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import ch.lock.mobile.android.deviceinfo.base.BaseViewModel
 import ch.lock.mobile.android.deviceinfo.utils.SimUtils
 
 class UsimInfoViewModel(
     simUtils: SimUtils
-) : ViewModel() {
+) : BaseViewModel() {
 
     companion object {
         const val TAG: String = "UsimInfoViewModel"

@@ -1,8 +1,8 @@
 package ch.lock.mobile.android.deviceinfo.ui.main
 
-import androidx.lifecycle.ViewModel
+import ch.lock.mobile.android.deviceinfo.base.BaseViewModel
 
-class MainViewModel : ViewModel() {
+class MainViewModel : BaseViewModel() {
 
     companion object {
         const val TAG: String = "MainViewModel"

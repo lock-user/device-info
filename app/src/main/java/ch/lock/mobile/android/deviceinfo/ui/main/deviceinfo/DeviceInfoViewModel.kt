@@ -2,12 +2,12 @@ package ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import ch.lock.mobile.android.deviceinfo.base.BaseViewModel
 import ch.lock.mobile.android.deviceinfo.utils.DeviceUtils
 
 class DeviceInfoViewModel(
     deviceUtils: DeviceUtils
-) : ViewModel() {
+) : BaseViewModel() {
 
     companion object {
         const val TAG: String = "DeviceInfoViewModel"

@@ -1,13 +1,14 @@
 package ch.lock.mobile.android.deviceinfo.ui.setting
 
 import androidx.lifecycle.*
+import ch.lock.mobile.android.deviceinfo.base.BaseViewModel
 import ch.lock.mobile.android.deviceinfo.data.local.datastore.setting.SettingPrefRepository
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class SettingViewModel(
     private val settingPrefRepository: SettingPrefRepository
-) : ViewModel() {
+) : BaseViewModel() {
 
     companion object {
         const val TAG: String = "SettingViewModel"
