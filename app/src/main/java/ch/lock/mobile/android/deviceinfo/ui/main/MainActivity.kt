@@ -11,6 +11,7 @@ import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.base.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
 import ch.lock.mobile.android.deviceinfo.ui.setting.SettingActivity
+import ch.lock.mobile.android.deviceinfo.ui.setting.SettingViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
@@ -27,8 +28,12 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
     }
 
     private val viewModel: MainViewModel by viewModel()
+    private val settingViewModel: SettingViewModel by viewModel()
 
     lateinit var navController: NavController
+
+    override val isScreenCaptureBlock: Boolean
+        get() = initScreenCaptureBlock()
 
     override fun getLayoutId(): Int = R.layout.activity_main
 
@@ -46,6 +51,8 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
             moveTaskToBack(true)
         }
     }
+
+    private fun initScreenCaptureBlock(): Boolean = settingViewModel.isCaptureBlock.value == true
 
     private fun initBinding() {
         binding.activity = this

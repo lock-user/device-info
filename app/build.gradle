@@ -150,6 +150,7 @@ dependencies {
     // Koin
     implementation "io.insert-koin:koin-core:$rootProject.koin_version"
     implementation "io.insert-koin:koin-android:$rootProject.koin_version"
+    implementation "io.insert-koin:koin-androidx-compose:$rootProject.koin_version"
     testImplementation "io.insert-koin:koin-test:$rootProject.koin_version"
 
     // ActivityResult

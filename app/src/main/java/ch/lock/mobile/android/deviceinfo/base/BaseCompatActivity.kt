@@ -12,6 +12,8 @@ abstract class BaseCompatActivity<T : ViewDataBinding> : AppCompatActivity() {
 
     lateinit var binding: T
 
+    abstract val isScreenCaptureBlock: Boolean
+
     abstract fun getLayoutId(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +24,10 @@ abstract class BaseCompatActivity<T : ViewDataBinding> : AppCompatActivity() {
         binding.lifecycleOwner = this
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
-        // activity 내 화면 캡쳐 차단
-        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+        // activity 내 화면 캡쳐 차단 여부
+        if (isScreenCaptureBlock) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+        }
     }
 
 }
