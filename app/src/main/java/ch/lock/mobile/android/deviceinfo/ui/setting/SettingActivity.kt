@@ -26,6 +26,7 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>(), HeaderCallback {
     override fun getLayoutId(): Int = R.layout.activity_setting
 
     override fun initView() {
+        binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
         binding.let { binding ->
