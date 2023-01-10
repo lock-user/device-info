@@ -58,7 +58,7 @@ class SettingPrefRepository(
         val isUseHyphen: Boolean = preferences[PrefKeys.IS_USE_HYPHEN] ?: false
 
         // 화면 캡쳐 차단 여부
-        val isCaptureBlock: Boolean = preferences[PrefKeys.IS_CAPTURE_BLOCK] ?: false
+        val isCaptureBlock: Boolean = preferences[PrefKeys.IS_CAPTURE_BLOCK] ?: true
 
         return SettingPref(
             isUseHyphen = isUseHyphen,
