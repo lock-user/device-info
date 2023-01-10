@@ -56,7 +56,7 @@ open class SimUtils(
      */
     open val phoneNumber: String
         get() = try {
-            formatUtils.toLocalPhoneNumber(globalPhoneNumber, true)
+            formatUtils.toLocalPhoneNumber(globalPhoneNumber)
         } catch (e: Exception) {
             ""
         }

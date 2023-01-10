@@ -13,7 +13,7 @@ open class FormatUtils {
      */
     open fun toLocalPhoneNumber(
         internationalNumber: String?,
-        includeHyphen: Boolean
+        includeHyphen: Boolean = true
     ): String {
         if (internationalNumber.isNullOrEmpty()) return "유심을 장착 혹은 정상적으로 인식되지 않아 확인 불가"
 

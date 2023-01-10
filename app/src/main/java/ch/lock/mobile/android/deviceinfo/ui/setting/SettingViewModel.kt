@@ -15,14 +15,6 @@ class SettingViewModel(
     }
 
     /**
-     * 하이픈 사용 여부 설정
-     */
-    val isUseHyphen: MutableLiveData<Boolean> =
-        (settingPrefRepository.settingPrefFlow.map {
-            it.isUseHyphen
-        }.asLiveData() as MutableLiveData<Boolean>)
-
-    /**
      * 캡쳐 방지 여부 설정
      */
     val isCaptureBlock: MutableLiveData<Boolean> =
@@ -32,11 +24,6 @@ class SettingViewModel(
 
     init {
         viewModelScope.launch {
-            launch {
-                isUseHyphen.asFlow().collect {
-                    settingPrefRepository.updateIsUseHyphen(it)
-                }
-            }
             launch {
                 isCaptureBlock.asFlow().collect {
                     settingPrefRepository.updateIsCaptureBlock(it)
