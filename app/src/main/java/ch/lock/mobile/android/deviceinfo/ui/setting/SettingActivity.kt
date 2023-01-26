@@ -11,11 +11,20 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SettingActivity : BaseActivity<ActivitySettingBinding>(), HeaderCallback {
 
     companion object {
+        /**
+         * TAG
+         */
         const val TAG: String = "SettingActivity"
 
+        /**
+         * SettingActivity intent 생성
+         */
         fun createIntent(context: Context): Intent =
             Intent(context, SettingActivity::class.java).apply {}
 
+        /**
+         * SettingActivity로 화면 전환
+         */
         fun intent(context: Context) = createIntent(context).also { intent ->
             context.startActivity(intent)
         }
@@ -44,6 +53,5 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>(), HeaderCallback {
     override fun onNextEvent() {
         // empty method
     }
-
 
 }

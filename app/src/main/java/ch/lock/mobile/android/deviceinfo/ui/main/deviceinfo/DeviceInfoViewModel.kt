@@ -10,6 +10,9 @@ class DeviceInfoViewModel(
 ) : BaseViewModel() {
 
     companion object {
+        /**
+         * TAG
+         */
         const val TAG: String = "DeviceInfoViewModel"
     }
 

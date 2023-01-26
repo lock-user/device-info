@@ -27,10 +27,13 @@ class SettingPrefRepository(
 ) {
 
     companion object {
+        /**
+         * TAG
+         */
         const val TAG: String = "SettingPrefRepository"
     }
 
-    object PrefKeys {
+    private object PrefKeys {
         val IS_CAPTURE_BLOCK = booleanPreferencesKey("IS_CAPTURE_BLOCK")
     }
 

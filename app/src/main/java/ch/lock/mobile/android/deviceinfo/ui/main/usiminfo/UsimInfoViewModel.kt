@@ -10,6 +10,9 @@ class UsimInfoViewModel(
 ) : BaseViewModel() {
 
     companion object {
+        /**
+         * TAG
+         */
         const val TAG: String = "UsimInfoViewModel"
     }
 

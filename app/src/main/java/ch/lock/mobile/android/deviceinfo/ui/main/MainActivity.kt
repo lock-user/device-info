@@ -19,9 +19,15 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
     companion object {
         const val TAG: String = "MainActivity"
 
+        /**
+         * MainActivity intent 생성
+         */
         fun createIntent(context: Context): Intent =
             Intent(context, MainActivity::class.java).apply {}
 
+        /**
+         * MainActivity로 화면 전환
+         */
         fun intent(context: Context) = createIntent(context).also { intent ->
             context.startActivity(intent)
         }
@@ -97,6 +103,9 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
         navController.navigate(directions)
     }
 
+    /**
+     * move to setting activity
+     */
     fun navSetting() {
         binding.navigationDl.closeDrawer(Gravity.LEFT)
         SettingActivity.intent(this)

@@ -17,8 +17,14 @@ import kotlin.system.exitProcess
 class App : Application() {
 
     companion object : KoinComponent {
+        /**
+         * TAG
+         */
         const val TAG: String = "App"
 
+        /**
+         * context
+         */
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
 

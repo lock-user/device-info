@@ -11,6 +11,9 @@ class SettingViewModel(
 ) : BaseViewModel() {
 
     companion object {
+        /**
+         * TAG
+         */
         const val TAG: String = "SettingViewModel"
     }
 

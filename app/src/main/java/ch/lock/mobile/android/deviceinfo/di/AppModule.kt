@@ -11,9 +11,24 @@ import org.koin.dsl.module
 object AppModule {
 
     object Named {
+        /**
+         * app icon
+         */
         const val APP_ICON: String = "app_icon"
+
+        /**
+         * package name
+         */
         const val PACKAGE_NAME: String = "package_name"
+
+        /**
+         * version name
+         */
         const val VERSION_NAME: String = "version_name"
+
+        /**
+         * version code
+         */
         const val VERSION_CODE: String = "version_code"
     }
 
