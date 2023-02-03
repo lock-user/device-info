@@ -5,7 +5,7 @@
     <string name="app_eng_name">Device Info</string>
 
     <!-- view -->
-    <string name="usim_info">유심 정보</string>
+    <string name="sim_info">SIM 정보</string>
     <string name="device_info">디바이스 정보</string>
     <string name="phone_number">전화번호</string>
     <string name="telecom">통신사</string>
@@ -15,7 +15,7 @@
     <string name="android_sdk_version">안드로이드 SDK 버전</string>
     <string name="android_id">안드로이드 ID</string>
     <string name="imei">IMEI</string>
-    <string name="usim_serial_number">유심 시리얼 번호</string>
+    <string name="sim_serial_number">SIM 시리얼 번호</string>
     <string name="kernel">커널</string>
     <string name="build_number">빌드 번호</string>
     <string name="sim_not_found">유심을 장착 혹은 정상적으로 인식되지 않아 확인 불가</string>

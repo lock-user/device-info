@@ -79,7 +79,7 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
 
         }
 
-        binding.navUsimInfo.setOnClickListener {
+        binding.navSimInfo.setOnClickListener {
             binding.navigationDl.closeDrawer(Gravity.LEFT)
             replaceToSimInfo()
         }
@@ -91,7 +91,7 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
     }
 
     /**
-     * move to Usim Info Fragment
+     * move to Sim Info Fragment
      */
     private fun replaceToSimInfo() {
         val directions = LockNavigationDirections.actionGlobalSimInfoFragment()

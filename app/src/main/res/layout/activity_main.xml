@@ -91,11 +91,11 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/navUsimInfo"
+                            android:id="@+id/navSimInfo"
                             style="@style/NavigationView"
                             android:drawablePadding="15dp"
                             android:focusable="true"
-                            android:text="@string/usim_info"
+                            android:text="@string/sim_info"
                             app:drawableLeftCompat="@drawable/sim_card_icon" />
 
                         <TextView

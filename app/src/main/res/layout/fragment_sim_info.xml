@@ -81,17 +81,17 @@
                 android:layout_marginBottom="10dp"
                 android:background="@color/black" />
 
-            <!-- usim 시리얼 번호 -->
+            <!-- sim 시리얼 번호 -->
             <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/usim_serial_number"
+                android:text="@string/sim_serial_number"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-                android:id="@+id/usimNumber_TextView"
+                android:id="@+id/simNumber_TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -102,7 +102,7 @@
                 tools:text="@string/sample_imei" />
 
             <View
-                android:id="@+id/contour_usimNumber"
+                android:id="@+id/contour_simNumber"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
