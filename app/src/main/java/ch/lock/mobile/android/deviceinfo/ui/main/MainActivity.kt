@@ -76,7 +76,6 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
                 true -> binding.navigationDl.closeDrawer(Gravity.LEFT)
                 else -> binding.navigationDl.openDrawer(Gravity.LEFT)
             }
-
         }
 
         binding.navSimInfo.setOnClickListener {
