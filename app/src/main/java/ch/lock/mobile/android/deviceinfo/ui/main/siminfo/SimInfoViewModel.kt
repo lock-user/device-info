@@ -1,11 +1,11 @@
-package ch.lock.mobile.android.deviceinfo.ui.main.usiminfo
+package ch.lock.mobile.android.deviceinfo.ui.main.siminfo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import ch.lock.mobile.android.deviceinfo.base.BaseViewModel
 import ch.lock.mobile.android.deviceinfo.utils.SimUtils
 
-class UsimInfoViewModel(
+class SimInfoViewModel(
     simUtils: SimUtils
 ) : BaseViewModel() {
 
@@ -13,7 +13,7 @@ class UsimInfoViewModel(
         /**
          * TAG
          */
-        const val TAG: String = "UsimInfoViewModel"
+        const val TAG: String = "SimInfoViewModel"
     }
 
     /**

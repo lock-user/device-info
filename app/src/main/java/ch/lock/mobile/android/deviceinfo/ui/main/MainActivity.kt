@@ -17,6 +17,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
 
     companion object {
+        /**
+         * TAG
+         */
         const val TAG: String = "MainActivity"
 
         /**
@@ -91,7 +94,7 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
      * move to Usim Info Fragment
      */
     private fun replaceToSimInfo() {
-        val directions = LockNavigationDirections.actionGlobalUsimInfoFragment()
+        val directions = LockNavigationDirections.actionGlobalSimInfoFragment()
         navController.navigate(directions)
     }
 

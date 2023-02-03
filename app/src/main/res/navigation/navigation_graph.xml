@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lock_navigation"
-    app:startDestination="@id/usimInfoFragment">
+    app:startDestination="@id/simInfoFragment">
 
-    <!-- Usim Info Fragment -->
+    <!-- Sim Info Fragment -->
     <fragment
-        android:id="@+id/usimInfoFragment"
-        android:name="ch.lock.mobile.android.deviceinfo.ui.main.usiminfo.UsimInfoFragment"
-        android:label="UsimInfoFragment" />
+        android:id="@+id/simInfoFragment"
+        android:name="ch.lock.mobile.android.deviceinfo.ui.main.siminfo.SimInfoFragment"
+        android:label="SimInfoFragment" />
 
     <action
-        android:id="@+id/action_global_usimInfoFragment"
-        app:destination="@id/usimInfoFragment"
+        android:id="@+id/action_global_simInfoFragment"
+        app:destination="@id/simInfoFragment"
         app:launchSingleTop="true"
-        app:popUpTo="@id/usimInfoFragment"
+        app:popUpTo="@id/simInfoFragment"
         app:popUpToInclusive="false"
         app:popUpToSaveState="true"
         app:restoreState="true" />
@@ -30,7 +29,7 @@
         android:id="@+id/action_global_deviceInfoFragment"
         app:destination="@id/deviceInfoFragment"
         app:launchSingleTop="true"
-        app:popUpTo="@id/usimInfoFragment"
+        app:popUpTo="@id/simInfoFragment"
         app:popUpToInclusive="false"
         app:popUpToSaveState="true"
         app:restoreState="true" />
