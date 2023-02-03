@@ -17,6 +17,9 @@ ext {
     // Coroutines
     coroutines_version = '1.6.1'
 
+    // LeakCanary
+    leakcanary_android_version = '2.10'
+
     // RxAndroid
     rxKotlin_version = '3.0.0'
     rxAndroid_version = '3.0.0'

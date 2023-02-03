@@ -1,6 +1,7 @@
 buildscript {
     ext {
         koin_version = '3.2.0'
+        kotlin_version = '1.7.20'
         navigation_version = '2.5.3'
     }
     repositories {
@@ -8,10 +9,13 @@ buildscript {
     }
     dependencies {
         // Koin
-        classpath "io.insert-koin:koin-gradle-plugin:$rootProject.koin_version"
+        classpath "io.insert-koin:koin-gradle-plugin:$koin_version"
+
+        // Kotlin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // Navigation
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$rootProject.navigation_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
     }
 }
 
@@ -22,4 +26,4 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
 }
 
-apply from: "dependencies.gradle"
+apply from: 'dependencies.gradle'

@@ -137,6 +137,9 @@ dependencies {
     implementation "io.reactivex.rxjava3:rxandroid:$rootProject.rxAndroid_version"
     implementation "com.github.akarnokd:rxjava3-bridge:$rootProject.rx3Bridge_version"
 
+    // LeakCanary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanary_android_version"
+
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycle_version"
