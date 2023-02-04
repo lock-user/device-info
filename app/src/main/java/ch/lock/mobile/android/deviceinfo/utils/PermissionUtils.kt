@@ -9,6 +9,9 @@ import com.gun0912.tedpermission.coroutine.TedPermission
 class PermissionUtils {
 
     companion object {
+        /**
+         * TAG
+         */
         const val TAG: String = "PermissionUtils"
     }
 

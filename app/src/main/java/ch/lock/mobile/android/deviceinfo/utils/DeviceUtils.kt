@@ -16,6 +16,9 @@ open class DeviceUtils(
 ) {
 
     companion object {
+        /**
+         * TAG
+         */
         const val TAG = "DeviceUtil"
     }
 
@@ -73,19 +76,17 @@ open class DeviceUtils(
     open val kernel: String
         get() = try {
             val command = Runtime.getRuntime().exec("uname -s -m", null, null)
-            var inputStream: InputStream? = null
-
-            inputStream = if (command.waitFor() == 0) {
+            val inputStream: InputStream? = if (command.waitFor() == 0) {
                 command.inputStream
             } else {
                 command.errorStream
             }
-
             val bufferedReader = BufferedReader(
                 InputStreamReader(inputStream),
-                1024
+                1_024
             )
             val line: String = bufferedReader.readLine()
+
             bufferedReader.close()
             line
         } catch (e: Exception) {
