@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo.DeviceInfoViewModel" />
+            type="ch.lock.mobile.android.deviceinfo.ui.screen.main.deviceinfo.DeviceInfoViewModel" />
     </data>
 
     <LinearLayout

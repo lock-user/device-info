@@ -1,9 +1,9 @@
-package ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo
+package ch.lock.mobile.android.deviceinfo.ui.screen.main.deviceinfo
 
 import android.os.Bundle
 import android.view.View
 import ch.lock.mobile.android.deviceinfo.R
-import ch.lock.mobile.android.deviceinfo.base.BaseFragment
+import ch.lock.mobile.android.deviceinfo.ui.base.fragment.BaseFragment
 import ch.lock.mobile.android.deviceinfo.databinding.FragmentDeviceInfoBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

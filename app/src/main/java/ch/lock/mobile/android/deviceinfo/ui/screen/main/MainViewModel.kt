@@ -1,6 +1,6 @@
-package ch.lock.mobile.android.deviceinfo.ui.main
+package ch.lock.mobile.android.deviceinfo.ui.screen.main
 
-import ch.lock.mobile.android.deviceinfo.base.BaseViewModel
+import ch.lock.mobile.android.deviceinfo.ui.base.viewmodel.BaseViewModel
 
 class MainViewModel : BaseViewModel() {
 

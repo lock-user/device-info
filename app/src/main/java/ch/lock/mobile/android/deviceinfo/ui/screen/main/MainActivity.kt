@@ -1,4 +1,4 @@
-package ch.lock.mobile.android.deviceinfo.ui.main
+package ch.lock.mobile.android.deviceinfo.ui.screen.main
 
 import android.content.Context
 import android.content.Intent
@@ -8,10 +8,10 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import ch.lock.mobile.android.deviceinfo.LockNavigationDirections
 import ch.lock.mobile.android.deviceinfo.R
-import ch.lock.mobile.android.deviceinfo.base.BaseCompatActivity
+import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
-import ch.lock.mobile.android.deviceinfo.ui.setting.SettingActivity
-import ch.lock.mobile.android.deviceinfo.ui.setting.SettingViewModel
+import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingActivity
+import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseCompatActivity<ActivityMainBinding>() {

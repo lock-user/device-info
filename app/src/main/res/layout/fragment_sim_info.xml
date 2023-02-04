@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="ch.lock.mobile.android.deviceinfo.ui.main.siminfo.SimInfoViewModel" />
+            type="ch.lock.mobile.android.deviceinfo.ui.screen.main.siminfo.SimInfoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

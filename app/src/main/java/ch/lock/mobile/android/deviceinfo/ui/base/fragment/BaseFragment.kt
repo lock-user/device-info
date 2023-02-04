@@ -1,14 +1,12 @@
-package ch.lock.mobile.android.deviceinfo.base
+package ch.lock.mobile.android.deviceinfo.ui.base.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 

@@ -1,7 +1,7 @@
 package ch.lock.mobile.android.deviceinfo.di
 
-import ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo.DeviceInfoFragment
-import ch.lock.mobile.android.deviceinfo.ui.main.siminfo.SimInfoFragment
+import ch.lock.mobile.android.deviceinfo.ui.screen.main.deviceinfo.DeviceInfoFragment
+import ch.lock.mobile.android.deviceinfo.ui.screen.main.siminfo.SimInfoFragment
 import org.koin.androidx.fragment.dsl.fragment
 import org.koin.core.module.Module
 import org.koin.dsl.module

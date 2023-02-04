@@ -1,7 +1,7 @@
-package ch.lock.mobile.android.deviceinfo.ui.setting
+package ch.lock.mobile.android.deviceinfo.ui.screen.setting
 
 import androidx.lifecycle.*
-import ch.lock.mobile.android.deviceinfo.base.BaseViewModel
+import ch.lock.mobile.android.deviceinfo.ui.base.viewmodel.BaseViewModel
 import ch.lock.mobile.android.deviceinfo.data.local.datastore.setting.SettingPrefRepository
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch

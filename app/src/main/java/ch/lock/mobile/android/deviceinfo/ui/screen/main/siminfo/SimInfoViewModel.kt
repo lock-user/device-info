@@ -1,8 +1,8 @@
-package ch.lock.mobile.android.deviceinfo.ui.main.siminfo
+package ch.lock.mobile.android.deviceinfo.ui.screen.main.siminfo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import ch.lock.mobile.android.deviceinfo.base.BaseViewModel
+import ch.lock.mobile.android.deviceinfo.ui.base.viewmodel.BaseViewModel
 import ch.lock.mobile.android.deviceinfo.utils.SimUtils
 
 class SimInfoViewModel(

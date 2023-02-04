@@ -1,12 +1,12 @@
-package ch.lock.mobile.android.deviceinfo.ui.splash
+package ch.lock.mobile.android.deviceinfo.ui.screen.splash
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import ch.lock.mobile.android.deviceinfo.R
-import ch.lock.mobile.android.deviceinfo.base.BaseCompatActivity
+import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivitySplashBinding
-import ch.lock.mobile.android.deviceinfo.ui.main.MainActivity
-import ch.lock.mobile.android.deviceinfo.ui.setting.SettingViewModel
+import ch.lock.mobile.android.deviceinfo.ui.screen.main.MainActivity
+import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
 import ch.lock.mobile.android.deviceinfo.utils.PermissionUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

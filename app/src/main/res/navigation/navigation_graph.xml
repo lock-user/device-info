@@ -7,7 +7,7 @@
     <!-- Sim Info Fragment -->
     <fragment
         android:id="@+id/simInfoFragment"
-        android:name="ch.lock.mobile.android.deviceinfo.ui.main.siminfo.SimInfoFragment"
+        android:name="ch.lock.mobile.android.deviceinfo.ui.screen.main.siminfo.SimInfoFragment"
         android:label="SimInfoFragment" />
 
     <action
@@ -22,7 +22,7 @@
     <!-- Device Info Fragment -->
     <fragment
         android:id="@+id/deviceInfoFragment"
-        android:name="ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo.DeviceInfoFragment"
+        android:name="ch.lock.mobile.android.deviceinfo.ui.screen.main.deviceinfo.DeviceInfoFragment"
         android:label="DeviceInfoFragment" />
 
     <action

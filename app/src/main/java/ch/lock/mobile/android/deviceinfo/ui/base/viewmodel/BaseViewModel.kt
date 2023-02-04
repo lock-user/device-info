@@ -1,4 +1,4 @@
-package ch.lock.mobile.android.deviceinfo.base
+package ch.lock.mobile.android.deviceinfo.ui.base.viewmodel
 
 import androidx.lifecycle.ViewModel
 

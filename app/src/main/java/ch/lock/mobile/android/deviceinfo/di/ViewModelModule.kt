@@ -1,9 +1,9 @@
 package ch.lock.mobile.android.deviceinfo.di
 
-import ch.lock.mobile.android.deviceinfo.ui.main.MainViewModel
-import ch.lock.mobile.android.deviceinfo.ui.main.deviceinfo.DeviceInfoViewModel
-import ch.lock.mobile.android.deviceinfo.ui.main.siminfo.SimInfoViewModel
-import ch.lock.mobile.android.deviceinfo.ui.setting.SettingViewModel
+import ch.lock.mobile.android.deviceinfo.ui.screen.main.MainViewModel
+import ch.lock.mobile.android.deviceinfo.ui.screen.main.deviceinfo.DeviceInfoViewModel
+import ch.lock.mobile.android.deviceinfo.ui.screen.main.siminfo.SimInfoViewModel
+import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module

@@ -1,9 +1,9 @@
-package ch.lock.mobile.android.deviceinfo.ui.setting
+package ch.lock.mobile.android.deviceinfo.ui.screen.setting
 
 import android.content.Context
 import android.content.Intent
 import ch.lock.mobile.android.deviceinfo.R
-import ch.lock.mobile.android.deviceinfo.base.BaseActivity
+import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivitySettingBinding
 import ch.lock.mobile.android.deviceinfo.ui.view.HeaderCallback
 import org.koin.androidx.viewmodel.ext.android.viewModel
