@@ -8,7 +8,7 @@ import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
 
 @SuppressLint("MissingPermission", "HardwareIds", "ObsoleteSdkInt")
-open class SimUtils(
+class SimUtils(
     private val applicationContext: Context,
     private val formatUtils: FormatUtils
 ) {

@@ -11,7 +11,7 @@ import java.io.InputStream
 import java.io.InputStreamReader
 
 @SuppressLint("MissingPermission", "HardwareIds")
-open class DeviceUtils(
+class DeviceUtils(
     private val applicationContext: Context
 ) {
 

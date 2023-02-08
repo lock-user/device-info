@@ -24,7 +24,10 @@
     <string name="close">닫기</string>
     <string name="button">버튼</string>
     <string name="is_use_hyphen">하이픈 사용 여부</string>
+    <string name="option">옵션</string>
     <string name="is_block_capture">화면 캡쳐 차단 여부</string>
+    <string name="info">정보</string>
+    <string name="version">버전</string>
 
     <!-- permission -->
     <string name="permission_denied_message">[설정] > [권한]에서 권한을 허용하시오.</string>

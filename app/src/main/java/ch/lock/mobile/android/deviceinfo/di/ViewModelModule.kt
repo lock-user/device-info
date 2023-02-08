@@ -22,6 +22,8 @@ object ViewModelModule {
         }
         viewModel {
             SettingViewModel(
+                get(),
+                get(),
                 get()
             )
         }

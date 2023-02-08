@@ -2,7 +2,7 @@ package ch.lock.mobile.android.deviceinfo.utils
 
 import java.util.regex.Pattern
 
-open class FormatUtils {
+class FormatUtils {
 
     companion object {
         /**
