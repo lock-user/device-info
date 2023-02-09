@@ -15,101 +15,163 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
-        <LinearLayout
-            android:id="@+id/drawer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:clickable="false"
-            android:focusable="false"
-            android:orientation="vertical"
-            android:padding="15dp">
+        <View
+            android:id="@+id/topView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- 전화번호 -->
-            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+        <!-- 전화 번호 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_phoneNumber"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topView">
+
+            <ImageView
+                android:id="@+id/iv_call"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/call_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_phoneNumber_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="@string/phone_number"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_phoneNumber"
+                app:layout_constraintStart_toEndOf="@id/iv_call"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-                android:id="@+id/phoneNumber_TextView"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_phoneNumber"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
                 android:text="@{viewModel.phoneNumber}"
                 android:textColor="@color/black"
-                android:textIsSelectable="true"
-                android:textSize="14sp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_call"
+                app:layout_constraintTop_toBottomOf="@id/tv_phoneNumber_title"
                 tools:text="@string/sample_phone_number" />
 
-            <View
-                android:id="@+id/contour_phoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/black" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- 통신사 -->
-            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+        <!-- 통신사 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_telecom"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_phoneNumber">
+
+            <ImageView
+                android:id="@+id/iv_telecom"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/network_cell_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_telecom_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="@string/telecom"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_telecom"
+                app:layout_constraintStart_toEndOf="@id/iv_telecom"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-                android:id="@+id/telecom_TextView"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_telecom"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
                 android:text="@{viewModel.telecom}"
                 android:textColor="@color/black"
-                android:textIsSelectable="true"
-                android:textSize="14sp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_telecom"
+                app:layout_constraintTop_toBottomOf="@id/tv_telecom_title"
                 tools:text="@string/sample_telecom" />
 
-            <View
-                android:id="@+id/contour_telecom"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/black" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- sim 시리얼 번호 -->
-            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
+        <!-- sim 시리얼 번호 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_sim_serial"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_telecom">
+
+            <ImageView
+                android:id="@+id/iv_sim"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/sim_card_icon_797d86"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_sim_serial_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="@string/sim_serial_number"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_sim_serial"
+                app:layout_constraintStart_toEndOf="@id/iv_sim"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_sim_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.telecom}"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-                android:id="@+id/simNumber_TextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@{viewModel.simNumber}"
-                android:textColor="@color/black"
-                android:textIsSelectable="true"
-                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_sim"
+                app:layout_constraintTop_toBottomOf="@id/tv_sim_serial_title"
                 tools:text="@string/sample_imei" />
 
-            <View
-                android:id="@+id/contour_simNumber"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/black" />
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
