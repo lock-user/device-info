@@ -3,6 +3,7 @@ package ch.lock.mobile.android.deviceinfo.ui.base.activity
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -14,6 +15,7 @@ abstract class BaseCompatActivity<T : ViewDataBinding> : AppCompatActivity() {
 
     abstract val isScreenCaptureBlock: Boolean
 
+    @LayoutRes
     abstract fun getLayoutId(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
