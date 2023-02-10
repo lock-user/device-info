@@ -14,7 +14,7 @@ class FormatUtils {
     /**
      * 국제 번호를 지역 번호 형태로 format
      */
-    open fun toLocalPhoneNumber(
+    fun toLocalPhoneNumber(
         internationalNumber: String?,
         includeHyphen: Boolean = true
     ): String {
