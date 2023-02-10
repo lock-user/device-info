@@ -19,7 +19,7 @@ class DeviceUtils(
         /**
          * TAG
          */
-        const val TAG = "DeviceUtil"
+        const val TAG = "DeviceUtils"
     }
 
     private val telephonyManager: TelephonyManager by lazy {
