@@ -29,31 +29,31 @@ class DeviceUtils(
     /**
      * @return 디바이스 모델
      */
-    open val model: String
+    val model: String
         get() = Build.MODEL
 
     /**
      * @return 디바이스 브랜드
      */
-    open val brand: String
+    val brand: String
         get() = Build.BRAND
 
     /**
      * @return OS Version
      */
-    open val os: String
+    val os: String
         get() = Build.VERSION.RELEASE
 
     /**
      * @return 안드로이드 OS API Level
      */
-    open val apiLevel: String
+    val apiLevel: String
         get() = Build.VERSION.SDK_INT.toString()
 
     /**
      * @return 디바이스 IMEI
      */
-    open val imei: String
+    val imei: String
         get() = try {
             telephonyManager.deviceId ?: ""
         } catch (e: Exception) {
@@ -65,7 +65,7 @@ class DeviceUtils(
      * 안드로이드 8~: 공장 초기화하면 재설정
      * @return Android ID
      */
-    open val androidId: String
+    val androidId: String
         get() = Settings.Secure.getString(
             applicationContext.contentResolver, Settings.Secure.ANDROID_ID
         )
@@ -73,7 +73,7 @@ class DeviceUtils(
     /**
      * @return 커널
      */
-    open val kernel: String
+    val kernel: String
         get() = try {
             val command = Runtime.getRuntime().exec("uname -s -m", null, null)
             val inputStream: InputStream? = if (command.waitFor() == 0) {
@@ -114,7 +114,7 @@ class DeviceUtils(
     /**
      * @return 빌드번호
      */
-    open val buildNumber: String
+    val buildNumber: String
         get() = Build.ID
 }
 

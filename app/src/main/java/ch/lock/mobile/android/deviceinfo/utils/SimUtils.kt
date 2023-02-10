@@ -31,7 +31,7 @@ class SimUtils(
     /**
      * @return 디바이스 SIM Serial Number
      */
-    open val simNumber: String
+    val simNumber: String
         get() = try {
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 ->
@@ -45,7 +45,7 @@ class SimUtils(
     /**
      * @return 통신사 정보
      */
-    open val telecom: String
+    val telecom: String
         get() = try {
             telephonyManager.networkOperatorName ?: ""
         } catch (e: Exception) {
@@ -57,7 +57,7 @@ class SimUtils(
      *
      * @return 디바이스 전화번호
      */
-    open val phoneNumber: String
+    val phoneNumber: String
         get() = try {
             formatUtils.toLocalPhoneNumber(globalPhoneNumber)
         } catch (e: Exception) {
@@ -69,7 +69,7 @@ class SimUtils(
      *
      * @return 디바이스 전화번호
      */
-    open val globalPhoneNumber: String
+    val globalPhoneNumber: String
         get() = try {
             telephonyManager.line1Number ?: ""
         } catch (e: Exception) {
