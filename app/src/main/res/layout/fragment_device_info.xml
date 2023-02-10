@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,239 +10,419 @@
             type="ch.lock.mobile.android.deviceinfo.ui.screen.main.deviceinfo.DeviceInfoViewModel" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/drawer"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:clickable="false"
-        android:focusable="false"
-        android:orientation="vertical"
-        android:padding="15dp">
-
-        <!-- 디바이스 브랜드 -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/device_brand"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/deviceBrand_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.deviceBrand}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_device_brand" />
+        android:background="@color/white">
 
         <View
-            android:id="@+id/contour_deviceBrand"
-            android:layout_width="match_parent"
+            android:id="@+id/topView"
+            android:layout_width="0dp"
             android:layout_height="1dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 브랜드 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_brand"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topView">
 
-        <!-- 디바이스 모델 -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/device_model"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_device"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/device_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/deviceModel_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.deviceModel}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_device_model" />
+            <TextView
+                android:id="@+id/tv_device_brand_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/device_brand"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_device_brand"
+                app:layout_constraintStart_toEndOf="@id/iv_device"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/contour_deviceModel"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            <TextView
+                android:id="@+id/tv_device_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.deviceBrand}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_device"
+                app:layout_constraintTop_toBottomOf="@id/tv_device_brand_title"
+                tools:text="@string/sample_device_brand" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 모델 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_model"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_brand">
 
-        <!-- 안드로이드 버전 -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/android_version"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_device_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/device_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/androidVersion_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.androidVersion}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_android_version" />
+            <TextView
+                android:id="@+id/tv_device_model_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/device_model"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_device_model"
+                app:layout_constraintStart_toEndOf="@id/iv_device_1"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/contour_androidVersion"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            <TextView
+                android:id="@+id/tv_device_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.deviceModel}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_device_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_device_model_title"
+                tools:text="@string/sample_device_model" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 안드로이드 버전 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_android_version"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_model">
 
-        <!-- 안드로이드 SDK 버전 -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/android_sdk_version"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_android"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/android_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/androidSdkVersion_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.androidApiLevel}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_android_sdk_version" />
+            <TextView
+                android:id="@+id/tv_android_version_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/android_version"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_android_version"
+                app:layout_constraintStart_toEndOf="@id/iv_android"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/contour_androidSdkVersion"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            <TextView
+                android:id="@+id/tv_android_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.androidVersion}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_android"
+                app:layout_constraintTop_toBottomOf="@id/tv_android_version_title"
+                tools:text="@string/sample_android_version" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 안드로이드 sdk 버전 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_android_sdk"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_android_version">
 
-        <!-- 안드로이드 ID -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/android_id"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_android_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/android_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/androidId_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.androidId}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_android_id" />
+            <TextView
+                android:id="@+id/tv_android_sdk_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/android_sdk_version"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_android_sdk"
+                app:layout_constraintStart_toEndOf="@id/iv_android_1"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/contour_androidId"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            <TextView
+                android:id="@+id/tv_android_sdk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.androidApiLevel}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_android_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_android_sdk_title"
+                tools:text="@string/sample_android_sdk_version" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 안드로이드 id 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_android_id"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_android_sdk">
 
-        <!-- IMEI -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/imei"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_android_2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/android_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/imei_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.imei}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_imei" />
+            <TextView
+                android:id="@+id/tv_android_id_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/android_id"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_android_id"
+                app:layout_constraintStart_toEndOf="@id/iv_android_2"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/contour_imei"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            <TextView
+                android:id="@+id/tv_android_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.androidId}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_android_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_android_id_title"
+                tools:text="@string/sample_android_id" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- imei 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_imei"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_android_id">
 
-        <!-- Kernel Version -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kernel"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_imei"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/fingerprint_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/kernelVersion_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.kernel}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            tools:text="@string/sample_kernel" />
+            <TextView
+                android:id="@+id/tv_imei_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/imei"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_imei"
+                app:layout_constraintStart_toEndOf="@id/iv_imei"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/contour_kernelVersion"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            <TextView
+                android:id="@+id/tv_imei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.imei}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_imei"
+                app:layout_constraintTop_toBottomOf="@id/tv_imei_title"
+                tools:text="@string/sample_imei" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 커널 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_kernel"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_imei">
 
-        <!-- Build Number -->
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/build_number"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_kernel"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/build_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ch.lock.mobile.android.deviceinfo.ui.view.BaseTextView
-            android:id="@+id/buildNumber_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{viewModel.buildNumber}"
-            android:textColor="@color/black"
-            android:textIsSelectable="true"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_kernel_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/kernel"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_kernel"
+                app:layout_constraintStart_toEndOf="@id/iv_kernel"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/contour_buildNumber"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            <TextView
+                android:id="@+id/tv_kernel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.kernel}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_kernel"
+                app:layout_constraintTop_toBottomOf="@id/tv_kernel_title"
+                tools:text="@string/sample_kernel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 빌드 번호 레이아웃 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_build_number"
+            android:layout_width="380dp"
+            android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/black" />
+            android:background="@drawable/bt_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_kernel">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_build"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/build_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_build_number_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/build_number"
+                android:textColor="@color/color_636b7d"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_build_number"
+                app:layout_constraintStart_toEndOf="@id/iv_build"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_build_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="34dp"
+                android:text="@{viewModel.buildNumber}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_build"
+                app:layout_constraintTop_toBottomOf="@id/tv_build_number_title"
+                tools:text="@string/sample_build_number" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

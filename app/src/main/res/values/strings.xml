@@ -42,5 +42,6 @@
     <string name="sample_android_id">1234567890abcdef</string>
     <string name="sample_imei">123456789012345</string>
     <string name="sample_kernel">Linux armv</string>
+    <string name="sample_build_number">SP1A.111122.033</string>
 
 </resources>
