@@ -36,7 +36,6 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
         }
     }
 
-    private val viewModel: MainViewModel by viewModel()
     private val settingViewModel: SettingViewModel by viewModel()
 
     lateinit var navController: NavController
