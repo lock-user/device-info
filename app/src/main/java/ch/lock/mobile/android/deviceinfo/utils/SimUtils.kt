@@ -33,10 +33,11 @@ class SimUtils(
      */
     val simNumber: String
         get() = try {
-            when {
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1 ->
-                    subscriptionManager.activeSubscriptionInfoList?.firstOrNull()?.iccId ?: ""
-                else -> telephonyManager.simSerialNumber ?: ""
+            when (Build.VERSION.SDK_INT) {
+                in 1.. 21 -> telephonyManager.simSerialNumber ?: ""
+                in 22..28 -> subscriptionManager.activeSubscriptionInfoList?.firstOrNull()?.iccId
+                    ?: "유심이 장착되어 있지 않아 확인 불가"
+                else -> "안드로이드 정책에 의해 확인 불가"
             }
         } catch (e: Exception) {
             ""
