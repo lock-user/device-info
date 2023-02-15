@@ -37,7 +37,7 @@ class SimUtils(
                 in 1.. 21 -> telephonyManager.simSerialNumber ?: ""
                 in 22..28 -> subscriptionManager.activeSubscriptionInfoList?.firstOrNull()?.iccId
                     ?: "유심이 장착되어 있지 않아 확인 불가"
-                else -> "안드로이드 정책에 의해 확인 불가"
+                else -> "안드로이드 보안 정책에 의해 확인 불가"
             }
         } catch (e: Exception) {
             ""

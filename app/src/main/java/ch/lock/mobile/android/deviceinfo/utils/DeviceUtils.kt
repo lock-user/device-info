@@ -55,9 +55,12 @@ class DeviceUtils(
      */
     val imei: String
         get() = try {
-            telephonyManager.deviceId ?: ""
+            when (Build.VERSION.SDK_INT) {
+                in 1..28 -> telephonyManager.deviceId ?: ""
+                else -> "안드로이드 보안 정책에 의해 확인 불가"
+            }
         } catch (e: Exception) {
-            "안드로이드 10부터는 imei를 확인할 수 없습니다."
+            ""
         }
 
     /**
