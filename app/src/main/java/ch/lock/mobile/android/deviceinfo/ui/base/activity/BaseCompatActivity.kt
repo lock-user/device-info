@@ -28,7 +28,10 @@ abstract class BaseCompatActivity<T : ViewDataBinding> : AppCompatActivity() {
 
         // activity 내 화면 캡쳐 차단 여부
         if (isScreenCaptureBlock) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_SECURE,
+                WindowManager.LayoutParams.FLAG_SECURE
+            )
         }
     }
 
