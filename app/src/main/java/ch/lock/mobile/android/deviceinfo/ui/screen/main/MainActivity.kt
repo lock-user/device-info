@@ -1,11 +1,13 @@
 package ch.lock.mobile.android.deviceinfo.ui.screen.main
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import ch.lock.mobile.android.deviceinfo.App
 import ch.lock.mobile.android.deviceinfo.LockNavigationDirections
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseCompatActivity
@@ -56,7 +58,7 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
         if (binding.navigationDl.isDrawerOpen(Gravity.LEFT)) {
             binding.navigationDl.closeDrawer(Gravity.LEFT)
         } else {
-            moveTaskToBack(true)
+            exitAppDialog()
         }
     }
 
@@ -86,6 +88,24 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
             binding.navigationDl.closeDrawer(Gravity.LEFT)
             replaceToDeviceInfo()
         }
+    }
+
+    /**
+     * 앱 종료 다이얼로그
+     */
+    private fun exitAppDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("앱 종료")
+            .setMessage("앱을 종료합니다.")
+            .setCancelable(false)
+            .setPositiveButton("확인") { dialog, id ->
+                App.exit(this@MainActivity)
+            }
+            .setNegativeButton("취소") { dialog, id ->
+                dialog.cancel()
+            }
+            .show()
+            .let { Unit }
     }
 
     /**
