@@ -14,6 +14,8 @@ import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingActivity
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
+import ch.lock.mobile.android.deviceinfo.utils.ResourceProvider
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
@@ -37,6 +39,8 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
             context.startActivity(intent)
         }
     }
+
+    private val resourceProvider: ResourceProvider by inject()
 
     private val settingViewModel: SettingViewModel by viewModel()
 
@@ -95,13 +99,13 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
      */
     private fun exitAppDialog() {
         AlertDialog.Builder(this)
-            .setTitle("앱 종료")
-            .setMessage("앱을 종료합니다.")
+            .setTitle(resourceProvider.getString(R.string.exit_app_dialog_title))
+            .setMessage(resourceProvider.getString(R.string.exit_app_dialog_message))
             .setCancelable(false)
-            .setPositiveButton("확인") { dialog, id ->
+            .setPositiveButton(resourceProvider.getString(R.string.check)) { dialog, id ->
                 App.exit(this@MainActivity)
             }
-            .setNegativeButton("취소") { dialog, id ->
+            .setNegativeButton(resourceProvider.getString(R.string.cancel)) { dialog, id ->
                 dialog.cancel()
             }
             .show()
