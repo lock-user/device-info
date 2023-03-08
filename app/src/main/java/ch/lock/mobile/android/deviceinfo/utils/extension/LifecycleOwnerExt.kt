@@ -5,7 +5,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 
-private const val TAG: String = "LifeCycleOwnerExt"
+private const val TAG: String = "LifecycleOwnerExt"
 
 val LifecycleOwner.lifeCycleContext: Context
     get() = when (this) {
