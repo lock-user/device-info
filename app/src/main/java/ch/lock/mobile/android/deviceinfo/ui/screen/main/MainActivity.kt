@@ -27,13 +27,13 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
         const val TAG: String = "MainActivity"
 
         /**
-         * MainActivity intent 생성
+         * create MainActivity intent
          */
         fun createIntent(context: Context): Intent =
             Intent(context, MainActivity::class.java).apply {}
 
         /**
-         * MainActivity로 화면 전환
+         * move to MainActivity
          */
         fun intent(context: Context) = createIntent(context).also { intent ->
             context.startActivity(intent)

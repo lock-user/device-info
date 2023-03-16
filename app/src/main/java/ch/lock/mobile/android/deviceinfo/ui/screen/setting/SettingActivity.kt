@@ -17,13 +17,13 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>(), HeaderCallback {
         const val TAG: String = "SettingActivity"
 
         /**
-         * SettingActivity intent 생성
+         * create SettingActivity intent
          */
         fun createIntent(context: Context): Intent =
             Intent(context, SettingActivity::class.java).apply {}
 
         /**
-         * SettingActivity로 화면 전환
+         * move to SettingActivity
          */
         fun intent(context: Context) = createIntent(context).also { intent ->
             context.startActivity(intent)

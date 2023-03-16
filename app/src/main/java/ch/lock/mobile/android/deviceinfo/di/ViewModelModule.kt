@@ -11,11 +11,15 @@ object ViewModelModule {
 
     @JvmStatic
     val INSTANCE: Module = module {
+
+        // device info
         viewModel {
             DeviceInfoViewModel(
                 get()
             )
         }
+
+        // setting
         viewModel {
             SettingViewModel(
                 get(),
@@ -23,6 +27,8 @@ object ViewModelModule {
                 get()
             )
         }
+
+        // sim info
         viewModel {
             SimInfoViewModel(
                 get()

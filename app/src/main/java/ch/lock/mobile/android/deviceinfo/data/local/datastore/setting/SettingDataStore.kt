@@ -47,7 +47,6 @@ class SettingPrefRepository(
     }
 
     private fun mapSettingPreferences(preferences: Preferences): SettingPref {
-
         // 화면 캡쳐 차단 여부
         val isCaptureBlock: Boolean = preferences[PrefKeys.IS_CAPTURE_BLOCK] ?: true
 

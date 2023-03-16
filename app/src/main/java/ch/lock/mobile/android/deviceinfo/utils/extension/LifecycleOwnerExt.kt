@@ -7,6 +7,9 @@ import androidx.lifecycle.LifecycleOwner
 
 private const val TAG: String = "LifecycleOwnerExt"
 
+/**
+ * @return context
+ */
 val LifecycleOwner.lifeCycleContext: Context
     get() = when (this) {
         is Activity -> this
