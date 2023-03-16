@@ -2,28 +2,19 @@ package ch.lock.mobile.android.deviceinfo.ui.base.activity
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import io.reactivex.disposables.CompositeDisposable
 
-abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
+abstract class BaseActivity: AppCompatActivity() {
 
-    protected lateinit var binding: T
     private var compositeDisposable = CompositeDisposable()
-
-    @LayoutRes
-    abstract fun getLayoutId(): Int
 
     abstract fun initView()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this@BaseActivity, getLayoutId())
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-
         initView()
     }
 

@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import ch.lock.mobile.android.deviceinfo.App
@@ -18,7 +19,7 @@ import ch.lock.mobile.android.deviceinfo.utils.ResourceProvider
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
+class MainActivity : BaseCompatActivity() {
 
     companion object {
         /**
@@ -40,6 +41,10 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
         }
     }
 
+    private val binding: ActivityMainBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.activity_main)
+    }
+
     private val resourceProvider: ResourceProvider by inject()
 
     private val settingViewModel: SettingViewModel by viewModel()
@@ -48,8 +53,6 @@ class MainActivity : BaseCompatActivity<ActivityMainBinding>() {
 
     override val isScreenCaptureBlock: Boolean
         get() = initScreenCaptureBlock()
-
-    override fun getLayoutId(): Int = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

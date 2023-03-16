@@ -2,13 +2,14 @@ package ch.lock.mobile.android.deviceinfo.ui.screen.setting
 
 import android.content.Context
 import android.content.Intent
+import androidx.databinding.DataBindingUtil
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivitySettingBinding
 import ch.lock.mobile.android.deviceinfo.ui.view.HeaderCallback
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SettingActivity : BaseActivity<ActivitySettingBinding>(), HeaderCallback {
+class SettingActivity : BaseActivity(), HeaderCallback {
 
     companion object {
         /**
@@ -30,9 +31,11 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>(), HeaderCallback {
         }
     }
 
-    private val viewModel: SettingViewModel by viewModel()
+    private val binding: ActivitySettingBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.activity_setting)
+    }
 
-    override fun getLayoutId(): Int = R.layout.activity_setting
+    private val viewModel: SettingViewModel by viewModel()
 
     override fun initView() {
         binding.lifecycleOwner = this

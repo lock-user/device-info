@@ -2,6 +2,7 @@ package ch.lock.mobile.android.deviceinfo.ui.screen.splash
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivitySplashBinding
@@ -15,13 +16,17 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 @SuppressLint("CustomSplashScreen")
-class SplashActivity : BaseCompatActivity<ActivitySplashBinding>() {
+class SplashActivity : BaseCompatActivity() {
 
     companion object {
         /**
          * TAG
          */
         const val TAG: String = "SplashActivity"
+    }
+
+    private val binding: ActivitySplashBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.activity_splash)
     }
 
     private val permissionUtils: PermissionUtils by inject()
@@ -31,12 +36,11 @@ class SplashActivity : BaseCompatActivity<ActivitySplashBinding>() {
     override val isScreenCaptureBlock: Boolean
         get() = initScreenCaptureBlock()
 
-    override fun getLayoutId(): Int = R.layout.activity_splash
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         initPermission()
+        initBinding()
     }
 
     /**
@@ -47,6 +51,10 @@ class SplashActivity : BaseCompatActivity<ActivitySplashBinding>() {
     }
 
     private fun initScreenCaptureBlock(): Boolean = settingViewModel.isCaptureBlock.value == true
+
+    private fun initBinding() {
+        binding.lifecycleOwner = this
+    }
 
     /**
      * 권한 초기화
