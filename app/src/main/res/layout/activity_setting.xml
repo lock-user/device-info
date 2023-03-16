@@ -71,7 +71,6 @@
                     android:id="@+id/switch_is_screen_capture_block__setting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="15dp"
                     android:checked="@={viewModel.isCaptureBlock()}"
                     android:focusable="false"
