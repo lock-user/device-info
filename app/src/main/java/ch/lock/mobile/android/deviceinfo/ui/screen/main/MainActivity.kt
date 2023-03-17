@@ -105,10 +105,10 @@ class MainActivity : BaseCompatActivity() {
             .setTitle(resourceProvider.getString(R.string.exit_app_dialog_title))
             .setMessage(resourceProvider.getString(R.string.exit_app_dialog_message))
             .setCancelable(false)
-            .setPositiveButton(resourceProvider.getString(R.string.check)) { dialog, id ->
+            .setPositiveButton(resourceProvider.getString(R.string.check)) { _, _ ->
                 App.exit(this@MainActivity)
             }
-            .setNegativeButton(resourceProvider.getString(R.string.cancel)) { dialog, id ->
+            .setNegativeButton(resourceProvider.getString(R.string.cancel)) { dialog, _ ->
                 dialog.cancel()
             }
             .show()
