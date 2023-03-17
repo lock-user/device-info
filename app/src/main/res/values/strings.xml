@@ -28,6 +28,7 @@
     <string name="is_block_capture">화면 캡쳐 차단 여부</string>
     <string name="info">정보</string>
     <string name="version">버전</string>
+    <string name="opensource_licenses">오픈소스 라이선스</string>
 
     <!-- dialog -->
     <string name="permission_denied_message">[설정] > [권한]에서 권한을 허용하시오.</string>

@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.android.gms.oss-licenses-plugin'
 }
 
 android {
@@ -131,6 +132,9 @@ dependencies {
 
     // optional - Test helpers
     androidTestImplementation "androidx.work:work-testing:$rootProject.work_version"
+
+    // oss licenses plugin
+    implementation "com.google.android.gms:play-services-oss-licenses:$rootProject.playServiceOssLicenses_version"
 
     // RxAndroid
     implementation "io.reactivex.rxjava3:rxkotlin:$rootProject.rxKotlin_version"

@@ -3,6 +3,7 @@ buildscript {
         koin_version = '3.2.0'
         kotlin_version = '1.7.20'
         navigation_version = '2.5.3'
+        ossLicensesPlugin_version = '0.10.6'
     }
     repositories {
         mavenCentral()
@@ -16,6 +17,9 @@ buildscript {
 
         // Navigation
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+
+        // oss licenses plugin
+        classpath "com.google.android.gms:oss-licenses-plugin:$ossLicensesPlugin_version"
     }
 }
 

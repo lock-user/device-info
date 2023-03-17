@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="activity"
+            type="ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingActivity" />
+
+        <variable
             name="viewModel"
             type="ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel" />
     </data>
@@ -120,6 +124,33 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="버전: 0.0.1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 오픈소스 라이선스 레이아웃 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_opensource_licenses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:focusableInTouchMode="false"
+                android:onClick="@{() -> activity.openSourceLicense()}">
+
+                <TextView
+                    android:id="@+id/TextView_opensource_licenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:focusable="false"
+                    android:text="@string/opensource_licenses"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

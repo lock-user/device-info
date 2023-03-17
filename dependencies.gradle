@@ -20,6 +20,9 @@ ext {
     // LeakCanary
     leakcanary_android_version = '2.10'
 
+    // oss licenses plugin
+    playServiceOssLicenses_version = '17.0.0'
+
     // RxAndroid
     rxKotlin_version = '3.0.0'
     rxAndroid_version = '3.0.0'

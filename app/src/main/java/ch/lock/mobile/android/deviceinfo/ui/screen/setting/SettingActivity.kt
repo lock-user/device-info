@@ -2,11 +2,13 @@ package ch.lock.mobile.android.deviceinfo.ui.screen.setting
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivitySettingBinding
 import ch.lock.mobile.android.deviceinfo.ui.view.HeaderCallback
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SettingActivity : BaseActivity(), HeaderCallback {
@@ -37,13 +39,27 @@ class SettingActivity : BaseActivity(), HeaderCallback {
 
     private val viewModel: SettingViewModel by viewModel()
 
-    override fun initView() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        initBinding()
+    }
+
+    private fun initBinding() {
         binding.lifecycleOwner = this
+        binding.activity = this
         binding.viewModel = viewModel
 
         binding.let { binding ->
             binding.settingHeader.headerCallback = this
         }
+    }
+
+    /**
+     * 오픈소스 라이선스 액티비티로 이동
+     */
+    fun openSourceLicense() {
+        startActivity(Intent(this, OssLicensesMenuActivity::class.java))
     }
 
     /**
