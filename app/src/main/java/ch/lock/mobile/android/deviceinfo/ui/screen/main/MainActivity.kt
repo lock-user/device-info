@@ -49,7 +49,9 @@ class MainActivity : BaseCompatActivity() {
 
     private val settingViewModel: SettingViewModel by viewModel()
 
-    lateinit var navController: NavController
+    private val navController: NavController by lazy {
+        (supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment).navController
+    }
 
     override val isScreenCaptureBlock: Boolean
         get() = initScreenCaptureBlock()
@@ -73,9 +75,6 @@ class MainActivity : BaseCompatActivity() {
 
     private fun initBinding() {
         binding.activity = this
-
-        navController =
-            (supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment).navController
 
         // tool bar의 sideMenu 버튼과 navigation view 간의 연동
         binding.sideMenu.setOnClickListener {
