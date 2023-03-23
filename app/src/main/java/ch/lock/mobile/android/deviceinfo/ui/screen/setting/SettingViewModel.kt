@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class SettingViewModel(
-    deviceUtils: DeviceUtils,
     resourceProvider: ResourceProvider,
     private val settingPrefRepository: SettingPrefRepository
 ) : BaseViewModel() {
@@ -36,12 +35,6 @@ class SettingViewModel(
      */
     val versionName: LiveData<String> =
         MutableLiveData("${resourceProvider.getString(R.string.version)}: ${BuildConfig.VERSION_NAME}")
-
-    /**
-     * 안드로이드 id
-     */
-    val androidId: LiveData<String> =
-        MutableLiveData("${resourceProvider.getString(R.string.android_id)}: ${deviceUtils.androidId}")
 
     init {
         viewModelScope.launch {
