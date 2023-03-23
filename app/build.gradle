@@ -90,7 +90,7 @@ def createApk() {
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
             if (outputFileName.endsWith('.apk')) {
-                def appName = "DeviceInfo"
+                def appName = "deviceinfo"
                 def date = new Date().format('yyyyMMdd')
                 def dir = "./apk/" + variant.versionName + "(" + variant.versionCode + ")"
                 def apk = appName + "-" + variant.versionName + "-" + date + ".apk"
