@@ -39,13 +39,11 @@
 
         <activity
             android:name=".ui.screen.main.MainActivity"
-            android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name=".ui.screen.setting.SettingActivity"
-            android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
