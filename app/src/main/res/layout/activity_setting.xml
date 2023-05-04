@@ -72,7 +72,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/switch_is_screen_capture_block__setting"
+                    android:id="@+id/switch_is_screen_capture_block_setting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"

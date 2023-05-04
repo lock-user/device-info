@@ -8,28 +8,40 @@ import org.koin.dsl.module
 object UtilsModule {
 
     val INSTANCE: Module = module {
+
         single {
             DeviceUtils(
                 get()
             )
         }
+
         single {
             FormatUtils()
         }
+
         single {
             PermissionUtils()
         }
+
+        single {
+            ProcessManagerImpl(
+                get()
+            )
+        } bind ProcessManager::class
+
         single {
             ResourceProviderImpl(
                 get()
             )
         } bind ResourceProvider::class
+
         single {
             SimUtils(
                 get(),
                 get()
             )
         }
+
     }
 
 }

@@ -27,16 +27,6 @@ class App : Application() {
          */
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
-
-        /**
-         * 앱 프로세스 강제 종료
-         */
-        @JvmStatic
-        fun exit(activity: Activity? = null) {
-            activity?.let { ActivityCompat.finishAffinity(it) }
-            Process.killProcess(Process.myPid())
-            exitProcess(0)
-        }
     }
 
 

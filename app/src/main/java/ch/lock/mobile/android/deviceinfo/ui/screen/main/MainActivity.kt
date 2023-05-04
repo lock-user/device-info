@@ -8,13 +8,13 @@ import android.view.Gravity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import ch.lock.mobile.android.deviceinfo.App
 import ch.lock.mobile.android.deviceinfo.LockNavigationDirections
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingActivity
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
+import ch.lock.mobile.android.deviceinfo.utils.ProcessManager
 import ch.lock.mobile.android.deviceinfo.utils.ResourceProvider
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -46,6 +46,8 @@ class MainActivity : BaseCompatActivity() {
     }
 
     private val resourceProvider: ResourceProvider by inject()
+
+    private val processManager: ProcessManager by inject()
 
     private val settingViewModel: SettingViewModel by viewModel()
 
@@ -105,7 +107,7 @@ class MainActivity : BaseCompatActivity() {
             .setMessage(resourceProvider.getString(R.string.exit_app_dialog_message))
             .setCancelable(false)
             .setPositiveButton(resourceProvider.getString(R.string.check)) { _, _ ->
-                App.exit(this@MainActivity)
+                processManager.exit()
             }
             .setNegativeButton(resourceProvider.getString(R.string.cancel)) { dialog, _ ->
                 dialog.cancel()

@@ -47,6 +47,14 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
+        <!-- ClearTaskActivity -->
+        <activity
+            android:name=".utils.ExitActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
     </application>
 
 </manifest>
