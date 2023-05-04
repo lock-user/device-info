@@ -18,7 +18,7 @@ class FormatUtils {
         internationalNumber: String?,
         includeHyphen: Boolean = true
     ): String {
-        if (internationalNumber.isNullOrEmpty()) return "유심을 장착 혹은 정상적으로 인식되지 않아 확인 불가"
+        if (internationalNumber.isNullOrEmpty()) return "유심 미장착"
 
         var toLocalPhoneNumber: String = Pattern.compile("(^[+]82)|(^82)")
             .matcher(internationalNumber)

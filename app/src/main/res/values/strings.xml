@@ -18,7 +18,7 @@
     <string name="sim_serial_number">SIM 시리얼 번호</string>
     <string name="kernel">커널</string>
     <string name="build_number">빌드 번호</string>
-    <string name="sim_not_found">유심을 장착 혹은 정상적으로 인식되지 않아 확인 불가</string>
+    <string name="sim_not_found">유심 미장착</string>
     <string name="other">기타</string>
     <string name="setting">설정</string>
     <string name="close">닫기</string>
