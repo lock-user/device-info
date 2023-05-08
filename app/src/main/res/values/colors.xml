@@ -15,4 +15,15 @@
     <color name="colorTransparent">#00000000</color>
     <color name="dialogBackground">#80000000</color>
 
+    <color name="color_000000">#000000</color>
+    <color name="color_ffffff">#FFFFFF</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_a6ffffff">#A6FFFFFF</color>
+    <color name="color_bfbfbf">#BFBFBF</color>
+    <color name="color_c4c4c4">#C4C4C4</color>
+    <color name="color_4b4b4b">#4B4B4B</color>
+    <color name="color_707070">#707070</color>
+    <color name="color_f05555">#F05555</color>
+    <color name="color_19b3db">#19B3DB</color>
+
 </resources>

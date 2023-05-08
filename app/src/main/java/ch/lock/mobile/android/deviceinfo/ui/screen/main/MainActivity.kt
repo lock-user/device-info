@@ -12,6 +12,7 @@ import ch.lock.mobile.android.deviceinfo.LockNavigationDirections
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
+import ch.lock.mobile.android.deviceinfo.ui.dialog.shutdown.ShutDownDialog
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingActivity
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
 import ch.lock.mobile.android.deviceinfo.utils.ProcessManager
@@ -99,21 +100,10 @@ class MainActivity : BaseCompatActivity() {
     }
 
     /**
-     * 앱 종료 다이얼로그
+     * 앱 종료 다이얼로그 표시
      */
     private fun exitAppDialog() {
-        AlertDialog.Builder(this)
-            .setTitle(resourceProvider.getString(R.string.exit_app_dialog_title))
-            .setMessage(resourceProvider.getString(R.string.exit_app_dialog_message))
-            .setCancelable(false)
-            .setPositiveButton(resourceProvider.getString(R.string.check)) { _, _ ->
-                processManager.exit()
-            }
-            .setNegativeButton(resourceProvider.getString(R.string.cancel)) { dialog, _ ->
-                dialog.cancel()
-            }
-            .show()
-            .let { Unit }
+        ShutDownDialog.newInstance().show(supportFragmentManager, ShutDownDialog.TAG)
     }
 
     /**

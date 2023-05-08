@@ -8,6 +8,7 @@ import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivitySettingBinding
 import ch.lock.mobile.android.deviceinfo.ui.view.HeaderCallback
+import ch.lock.mobile.android.deviceinfo.utils.extension.observeBaseViewModelEvent
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -43,6 +44,7 @@ class SettingActivity : BaseActivity(), HeaderCallback {
         super.onCreate(savedInstanceState)
 
         initBinding()
+        initViewModel()
     }
 
     private fun initBinding() {
@@ -55,6 +57,10 @@ class SettingActivity : BaseActivity(), HeaderCallback {
         }
     }
 
+    private fun initViewModel() {
+        observeBaseViewModelEvent(viewModel)
+    }
+
     /**
      * 오픈소스 라이선스 액티비티로 이동
      */
@@ -63,7 +69,7 @@ class SettingActivity : BaseActivity(), HeaderCallback {
     }
 
     /**
-     * 뒤로가기 버튼 클릭 시 설정 화면 종료
+     * 뒤로 가기 버튼 클릭 시 설정 화면 종료
      */
     override fun onBackEvent() {
         finish()

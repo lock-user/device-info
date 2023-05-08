@@ -5,6 +5,7 @@ import android.view.View
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.fragment.BaseFragment
 import ch.lock.mobile.android.deviceinfo.databinding.FragmentDeviceInfoBinding
+import ch.lock.mobile.android.deviceinfo.utils.extension.observeBaseViewModelEvent
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DeviceInfoFragment : BaseFragment<FragmentDeviceInfoBinding>() {
@@ -24,10 +25,15 @@ class DeviceInfoFragment : BaseFragment<FragmentDeviceInfoBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         initBinding()
+        initViewModel()
     }
 
     private fun initBinding() {
         binding.viewModel = viewModel
+    }
+
+    private fun initViewModel() {
+        observeBaseViewModelEvent(viewModel)
     }
 
 }
