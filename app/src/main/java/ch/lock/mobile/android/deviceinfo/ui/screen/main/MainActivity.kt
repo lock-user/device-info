@@ -1,6 +1,5 @@
 package ch.lock.mobile.android.deviceinfo.ui.screen.main
 
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -15,9 +14,6 @@ import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
 import ch.lock.mobile.android.deviceinfo.ui.dialog.shutdown.ShutDownDialog
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingActivity
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
-import ch.lock.mobile.android.deviceinfo.utils.ProcessManager
-import ch.lock.mobile.android.deviceinfo.utils.ResourceProvider
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseCompatActivity() {
@@ -45,10 +41,6 @@ class MainActivity : BaseCompatActivity() {
     private val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView(this, R.layout.activity_main)
     }
-
-    private val resourceProvider: ResourceProvider by inject()
-
-    private val processManager: ProcessManager by inject()
 
     private val settingViewModel: SettingViewModel by viewModel()
 
