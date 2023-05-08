@@ -69,6 +69,9 @@ android {
     lintOptions {
         abortOnError false
         checkReleaseBuilds false
+        warning 'UnusedResources'
+        warning 'UnusedIds'
+        warning 'UnusedResourcesConfiguration'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
