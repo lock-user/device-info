@@ -9,6 +9,7 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.fragment.koin.fragmentFactory
 import org.koin.core.component.KoinComponent
 import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 
 class App : Application() {
 
@@ -44,7 +45,7 @@ class App : Application() {
      * koin 초기화
      */
     private fun initKoin() = startKoin {
-        androidLogger()
+        androidLogger(Level.DEBUG)
         androidContext(this@App)
         fragmentFactory()
         koin.loadModules(AppModule.getModules())
