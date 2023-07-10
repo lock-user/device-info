@@ -15,9 +15,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SettingActivity : BaseActivity(), HeaderCallback {
 
     companion object {
-        /**
-         * TAG
-         */
         const val TAG: String = "SettingActivity"
 
         /**

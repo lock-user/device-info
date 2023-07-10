@@ -27,9 +27,6 @@ class SettingPrefRepository(
 ) {
 
     companion object {
-        /**
-         * TAG
-         */
         const val TAG: String = "SettingPrefRepository"
     }
 

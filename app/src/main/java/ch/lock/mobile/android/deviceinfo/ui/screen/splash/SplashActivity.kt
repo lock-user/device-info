@@ -19,9 +19,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SplashActivity : BaseCompatActivity() {
 
     companion object {
-        /**
-         * TAG
-         */
         const val TAG: String = "SplashActivity"
     }
 

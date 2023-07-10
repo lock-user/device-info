@@ -11,9 +11,6 @@ import ch.lock.mobile.android.deviceinfo.ui.base.dialog.BaseDialogFragment
 class ProgressDialog: BaseDialogFragment() {
 
     companion object {
-        /**
-         * TAG
-         */
         const val TAG: String = "ProgressDialog"
 
         /**

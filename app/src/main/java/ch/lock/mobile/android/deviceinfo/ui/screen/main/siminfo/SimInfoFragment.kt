@@ -11,9 +11,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SimInfoFragment : BaseFragment<FragmentSimInfoBinding>() {
 
     companion object {
-        /**
-         * TAG
-         */
         const val TAG: String = "SimInfoFragment"
     }
 

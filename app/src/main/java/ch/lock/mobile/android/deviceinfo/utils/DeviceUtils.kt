@@ -16,9 +16,6 @@ class DeviceUtils(
 ) {
 
     companion object {
-        /**
-         * TAG
-         */
         const val TAG = "DeviceUtils"
     }
 
