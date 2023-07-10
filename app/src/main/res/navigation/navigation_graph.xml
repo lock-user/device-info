@@ -34,4 +34,19 @@
         app:popUpToSaveState="true"
         app:restoreState="true" />
 
+    <!-- System Fragment -->
+    <fragment
+        android:id="@+id/systemFragment"
+        android:name="ch.lock.mobile.android.deviceinfo.ui.screen.main.system.SystemFragment"
+        android:label="SystemFragment" />
+
+    <action
+        android:id="@+id/action_global_systemFragment"
+        app:destination="@id/systemFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/simInfoFragment"
+        app:popUpToInclusive="false"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
 </navigation>

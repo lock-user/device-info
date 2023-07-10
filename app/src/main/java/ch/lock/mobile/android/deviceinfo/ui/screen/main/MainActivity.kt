@@ -89,6 +89,11 @@ class MainActivity : BaseCompatActivity() {
             binding.navigationDl.closeDrawer(Gravity.LEFT)
             replaceToDeviceInfo()
         }
+
+        binding.navSystem.setOnClickListener {
+            binding.navigationDl.closeDrawer(Gravity.LEFT)
+            replaceToSystem()
+        }
     }
 
     /**
@@ -111,6 +116,14 @@ class MainActivity : BaseCompatActivity() {
      */
     private fun replaceToDeviceInfo() {
         val directions = LockNavigationDirections.actionGlobalDeviceInfoFragment()
+        navController.navigate(directions)
+    }
+
+    /**
+     * move to System Fragment
+     */
+    private fun replaceToSystem() {
+        val directions = LockNavigationDirections.actionGlobalSystemFragment()
         navController.navigate(directions)
     }
 

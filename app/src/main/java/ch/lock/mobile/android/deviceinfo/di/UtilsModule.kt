@@ -42,6 +42,10 @@ object UtilsModule {
             )
         }
 
+        single {
+            SystemUtils()
+        }
+
     }
 
 }

@@ -2,6 +2,7 @@ package ch.lock.mobile.android.deviceinfo.di
 
 import ch.lock.mobile.android.deviceinfo.ui.screen.main.deviceinfo.DeviceInfoViewModel
 import ch.lock.mobile.android.deviceinfo.ui.screen.main.siminfo.SimInfoViewModel
+import ch.lock.mobile.android.deviceinfo.ui.screen.main.system.SystemViewModel
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
@@ -33,6 +34,14 @@ object ViewModelModule {
                 get()
             )
         }
+
+        // system
+        viewModel {
+            SystemViewModel(
+                get()
+            )
+        }
+
     }
 
 }

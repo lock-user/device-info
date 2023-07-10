@@ -51,3 +51,16 @@ class FormatUtils {
     }
 
 }
+
+/**
+ * ms를 조건에 따라 format
+ */
+fun Long.getTime(): String = if (this < 60_000) {
+    String.format("${(this / 1_000) % 60}초 전")
+} else if (this < 3_600_000) {
+    String.format("${(this / 1_000 / 60) % 60}분 전")
+} else if (this < 86_400_000) {
+    String.format("${this / 1_000 / 3_600}시간 전")
+} else {
+    String.format("${this / 1_000 / 86_400}일 전")
+}
