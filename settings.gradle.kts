@@ -1,3 +1,5 @@
+rootProject.name = "DeviceInfo"
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -12,5 +14,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "DeviceInfo"
-include ':app'
+
+include(":app")
