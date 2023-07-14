@@ -13,6 +13,17 @@ val DependencyHandler.`constraint-layout` get() = implementation("androidx.const
 val DependencyHandler.`material` get() = implementation("com.google.android.material:material:${`material version`}")
 val DependencyHandler.`ktx` get() = implementation("androidx.core:core-ktx:${`ktx version`}")
 
+// Compose
+val DependencyHandler.`compose ui` get() = implementation("androidx.compose.ui:ui:${`compose version`}")
+val DependencyHandler.`compose preview` get() = implementation("androidx.compose.ui:ui-tooling-preview:${`compose version`}")
+val DependencyHandler.`compose material` get() = implementation("androidx.compose.material:material:${`compose version`}")
+val DependencyHandler.`compose activity` get() = implementation("androidx.activity:activity-compose:${`compose-activity version`}")
+
+// Compose Test
+val DependencyHandler.`compose-ui-junit` get() = androidTestImplementation("androidx.compose.ui:ui-test-junit4:${`compose version`}")
+val DependencyHandler.`compose-ui-tooling` get() = debugImplementation("androidx.compose.ui:ui-tooling:${`compose version`}")
+val DependencyHandler.`compose-manifest` get() = debugImplementation("androidx.compose.ui:ui-test-manifest:${`compose version`}")
+
 // Coroutines
 val DependencyHandler.`coroutines-android` get() = implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${`coroutines version`}")
 val DependencyHandler.`coroutines-rx3` get() = implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx3:${`coroutines version`}")
