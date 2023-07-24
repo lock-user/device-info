@@ -16,7 +16,7 @@ val DependencyHandler.`ktx` get() = implementation("androidx.core:core-ktx:${`kt
 // Compose
 val DependencyHandler.`compose ui` get() = implementation("androidx.compose.ui:ui:${`compose version`}")
 val DependencyHandler.`compose preview` get() = implementation("androidx.compose.ui:ui-tooling-preview:${`compose version`}")
-val DependencyHandler.`compose material` get() = implementation("androidx.compose.material:material:${`compose version`}")
+val DependencyHandler.`compose material3` get() = implementation("androidx.compose.material3:material3:${`compose-material3 version`}")
 val DependencyHandler.`compose activity` get() = implementation("androidx.activity:activity-compose:${`compose-activity version`}")
 
 // Compose Test

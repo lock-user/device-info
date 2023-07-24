@@ -19,6 +19,7 @@ const val `ktx version` = "1.7.0"
 // Compose
 const val `compose version` = "1.3.1"
 const val `compose-activity version` = "1.6.1"
+const val `compose-material3 version` = "1.1.1"
 
 // Coroutines
 const val `coroutines version` = "1.6.1"

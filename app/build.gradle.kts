@@ -110,7 +110,7 @@ dependencies {
 
     `compose ui`
     `compose preview`
-    `compose material`
+    `compose material3`
     `compose activity`
 
     `compose-ui-junit`
