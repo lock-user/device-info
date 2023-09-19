@@ -16,7 +16,7 @@ import ch.lock.mobile.android.deviceinfo.ui.dialog.progress.ProgressDialog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-private const val TAG: String = "LifecycleOwnerExt"
+private const val TAG = "LifecycleOwnerExt"
 
 /**
  * @return context

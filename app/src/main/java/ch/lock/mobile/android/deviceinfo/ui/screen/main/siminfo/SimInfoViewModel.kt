@@ -10,7 +10,7 @@ class SimInfoViewModel(
 ) : BaseViewModel() {
 
     companion object {
-        const val TAG: String = "SimInfoViewModel"
+        const val TAG = "SimInfoViewModel"
     }
 
     /**

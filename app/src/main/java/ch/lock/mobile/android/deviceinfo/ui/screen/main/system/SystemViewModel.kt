@@ -10,7 +10,7 @@ class SystemViewModel(
 ) : BaseViewModel() {
 
     companion object {
-        const val TAG: String = "SystemViewModel"
+        const val TAG = "SystemViewModel"
     }
 
     /**

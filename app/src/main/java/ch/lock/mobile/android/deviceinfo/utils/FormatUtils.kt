@@ -5,7 +5,7 @@ import java.util.regex.Pattern
 class FormatUtils {
 
     companion object {
-        const val TAG: String = "FormatUtils"
+        const val TAG = "FormatUtils"
     }
 
     /**

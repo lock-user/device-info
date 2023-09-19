@@ -19,7 +19,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MainActivity : BaseCompatActivity() {
 
     companion object {
-        const val TAG: String = "MainActivity"
+        const val TAG = "MainActivity"
 
         /**
          * create MainActivity intent

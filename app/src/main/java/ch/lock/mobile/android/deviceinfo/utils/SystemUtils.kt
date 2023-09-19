@@ -5,7 +5,7 @@ import android.os.SystemClock
 class SystemUtils {
 
     companion object {
-        const val TAG: String = "SystemUtils"
+        const val TAG = "SystemUtils"
     }
 
     /**

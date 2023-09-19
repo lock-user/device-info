@@ -14,7 +14,7 @@ import io.reactivex.Maybe as MaybeV2
 import io.reactivex.Observable as ObservableV2
 import io.reactivex.Single as SingleV2
 
-private const val TAG: String = "RxExt"
+private const val TAG = "RxExt"
 
 object MySchedulers {
     /**

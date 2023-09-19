@@ -14,7 +14,7 @@ import org.koin.core.logger.Level
 class App : Application() {
 
     companion object : KoinComponent {
-        const val TAG: String = "App"
+        const val TAG = "App"
 
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context

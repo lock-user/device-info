@@ -19,7 +19,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SplashActivity : BaseCompatActivity() {
 
     companion object {
-        const val TAG: String = "SplashActivity"
+        const val TAG = "SplashActivity"
     }
 
     private val binding: ActivitySplashBinding by lazy {

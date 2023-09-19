@@ -24,7 +24,6 @@ class PermissionUtils {
             .setGotoSettingButton(true)
             .setGotoSettingButtonText(lifecycleOwner.lifecycleContext.getString(R.string.setting))
             .check()
-
         if (permissionResult.isGranted) {
             onGranted()
         } else {

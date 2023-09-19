@@ -13,7 +13,7 @@ import org.koin.android.ext.android.inject
 class ShutDownDialog : BaseDialogFragment() {
 
     companion object {
-        const val TAG: String = "ShutDownDialog"
+        const val TAG = "ShutDownDialog"
 
         /**
          * ShutDownDialog fragment bundle 설정

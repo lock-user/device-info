@@ -11,7 +11,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class DeviceInfoFragment : BaseFragment<FragmentDeviceInfoBinding>() {
 
     companion object {
-        const val TAG: String = "DeviceInfoFragment"
+        const val TAG = "DeviceInfoFragment"
     }
 
     private val viewModel: DeviceInfoViewModel by viewModel()

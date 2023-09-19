@@ -14,7 +14,7 @@ class SimUtils(
 ) {
 
     companion object {
-        const val TAG: String = "SimUtils"
+        const val TAG = "SimUtils"
     }
 
     private val telephonyManager: TelephonyManager by lazy {

@@ -11,7 +11,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SystemFragment : BaseFragment<FragmentSystemBinding>() {
 
     companion object {
-        const val TAG: String = "SystemFragment"
+        const val TAG = "SystemFragment"
     }
 
     override fun getLayoutId(): Int = R.layout.fragment_system
