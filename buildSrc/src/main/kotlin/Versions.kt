@@ -35,7 +35,7 @@ const val `lifecycle version` = "2.5.1"
 const val `square-logcat version` = "0.1"
 
 // Navigation
-const val `navigation version` = "2.5.3"
+const val `navigation version` = "2.6.0"
 
 // Permission
 const val `ted-activity-result version` = "1.1.2"

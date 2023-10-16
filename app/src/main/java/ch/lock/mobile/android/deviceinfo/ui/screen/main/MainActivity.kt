@@ -52,12 +52,13 @@ class MainActivity : BaseCompatActivity() {
         super.onCreate(savedInstanceState)
 
         initBinding()
+        initView()
     }
 
     override fun onBackPressed() {
         // navigation view가 열려있을 때 뒤로가기 버튼을 누르면 navigation view만 닫기
-        if (binding.navigationDl.isDrawerOpen(Gravity.LEFT)) {
-            binding.navigationDl.closeDrawer(Gravity.LEFT)
+        if (binding.navDrawer.isOpen) {
+            binding.navDrawer.close()
         } else {
             exitAppDialog()
         }
@@ -66,30 +67,36 @@ class MainActivity : BaseCompatActivity() {
     private fun initScreenCaptureBlock(): Boolean = settingViewModel.isCaptureBlock.value == true
 
     private fun initBinding() {
-        binding.activity = this
+        binding.lifecycleOwner = this
+    }
 
-        // tool bar의 sideMenu 버튼과 navigation view 간의 연동
-        binding.sideMenu.setOnClickListener {
-            // navigationDl의 navigation view 여닫기
-            when (binding.navigationDl.isDrawerOpen(Gravity.LEFT)) {
-                true -> binding.navigationDl.closeDrawer(Gravity.LEFT)
-                else -> binding.navigationDl.openDrawer(Gravity.LEFT)
+    private fun initView() {
+        binding.toolbar.run {
+            setNavigationOnClickListener {
+                binding.navDrawer.open()
             }
         }
+        binding.navView.run {
+            setNavigationItemSelectedListener {
+                when (it.itemId) {
+                    R.id.nav_sim -> {
+                        navSim()
+                    }
 
-        binding.navSimInfo.setOnClickListener {
-            binding.navigationDl.closeDrawer(Gravity.LEFT)
-            replaceToSimInfo()
-        }
+                    R.id.nav_device -> {
+                        navDevice()
+                    }
 
-        binding.navDeviceInfo.setOnClickListener {
-            binding.navigationDl.closeDrawer(Gravity.LEFT)
-            replaceToDeviceInfo()
-        }
+                    R.id.nav_system -> {
+                        navSystem()
+                    }
 
-        binding.navSystem.setOnClickListener {
-            binding.navigationDl.closeDrawer(Gravity.LEFT)
-            replaceToSystem()
+                    R.id.nav_settings -> {
+                        navSetting()
+                    }
+                }
+                true
+            }
         }
     }
 
@@ -103,7 +110,8 @@ class MainActivity : BaseCompatActivity() {
     /**
      * move to Sim Info Fragment
      */
-    private fun replaceToSimInfo() {
+    private fun navSim() {
+        binding.navDrawer.close()
         val directions = LockNavigationDirections.actionGlobalSimInfoFragment()
         navController.navigate(directions)
     }
@@ -111,7 +119,8 @@ class MainActivity : BaseCompatActivity() {
     /**
      * move to Device Info Fragment
      */
-    private fun replaceToDeviceInfo() {
+    private fun navDevice() {
+        binding.navDrawer.close()
         val directions = LockNavigationDirections.actionGlobalDeviceInfoFragment()
         navController.navigate(directions)
     }
@@ -119,7 +128,8 @@ class MainActivity : BaseCompatActivity() {
     /**
      * move to System Fragment
      */
-    private fun replaceToSystem() {
+    private fun navSystem() {
+        binding.navDrawer.close()
         val directions = LockNavigationDirections.actionGlobalSystemFragment()
         navController.navigate(directions)
     }
@@ -127,8 +137,8 @@ class MainActivity : BaseCompatActivity() {
     /**
      * move to setting activity
      */
-    fun navSetting() {
-        binding.navigationDl.closeDrawer(Gravity.LEFT)
+    private fun navSetting() {
+        binding.navDrawer.close()
         SettingActivity.intent(this)
     }
 
