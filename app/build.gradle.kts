@@ -67,7 +67,6 @@ android {
         }
     }
     buildFeatures {
-        compose = true
         dataBinding = true
     }
     kapt {
@@ -76,9 +75,6 @@ android {
     lintOptions {
         isAbortOnError = false
         isCheckReleaseBuilds = false
-    }
-    buildFeatures {
-        dataBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
