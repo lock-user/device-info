@@ -83,9 +83,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.1"
-    }
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -107,15 +104,6 @@ dependencies {
     `material`
     `constraint-layout`
 
-    `compose ui`
-    `compose preview`
-    `compose material`
-    `compose activity`
-
-    `compose-ui-junit`
-    `compose-ui-tooling`
-    `compose-manifest`
-
     `coroutines-android`
     `coroutines-rx3`
 
@@ -123,7 +111,6 @@ dependencies {
 
     `koin-core`
     `koin-android`
-    `koin-compose`
     `koin-test`
 
     `navigation-fragment`

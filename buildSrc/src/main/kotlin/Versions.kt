@@ -16,10 +16,6 @@ const val `constraint-layout version` = "2.1.4"
 const val `material version` = "1.9.0"
 const val `ktx version` = "1.7.0"
 
-// Compose
-const val `compose version` = "1.3.1"
-const val `compose-activity version` = "1.6.1"
-
 // Coroutines
 const val `coroutines version` = "1.6.1"
 
