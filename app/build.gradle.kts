@@ -43,6 +43,7 @@ android {
 
             versionNameSuffix = "-dbg"
             applicationIdSuffix = ".dbg"
+            signingConfig = signingConfigs.getByName("keystore")
 
             setProguardFiles(
                 listOf(
@@ -57,6 +58,8 @@ android {
             isZipAlignEnabled = true
             isShrinkResources = true
             aaptOptions.cruncherEnabled = true
+
+            signingConfig = signingConfigs.getByName("keystore")
 
             setProguardFiles(
                 listOf(
