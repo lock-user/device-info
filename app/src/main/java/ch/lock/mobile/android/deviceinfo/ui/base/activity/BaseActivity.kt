@@ -1,5 +1,5 @@
 package ch.lock.mobile.android.deviceinfo.ui.base.activity
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 
-abstract class BaseActivity : AppCompatActivity()
+abstract class BaseActivity : ComponentActivity()

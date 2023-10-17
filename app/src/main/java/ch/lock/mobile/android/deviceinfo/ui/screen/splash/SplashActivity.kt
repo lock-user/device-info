@@ -58,7 +58,7 @@ class SplashActivity : BaseCompatActivity() {
      */
     private fun initPermission() = CoroutineScope(Dispatchers.Main).launch {
         permissionUtils.checkPermission(this@SplashActivity) {
-            MainActivity.intent(this@SplashActivity)
+//            MainActivity.intent(this@SplashActivity)
         }
     }
 
