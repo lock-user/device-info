@@ -41,6 +41,7 @@ class SettingActivity : BaseActivity(), HeaderCallback {
         super.onCreate(savedInstanceState)
 
         initBinding()
+        initView()
         initViewModel()
     }
 
@@ -48,7 +49,9 @@ class SettingActivity : BaseActivity(), HeaderCallback {
         binding.lifecycleOwner = this
         binding.activity = this
         binding.viewModel = viewModel
+    }
 
+    private fun initView() {
         binding.let { binding ->
             binding.settingHeader.headerCallback = this
         }
