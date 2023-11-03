@@ -36,16 +36,4 @@
     <string name="permission_denied_message">[설정] > [권한]에서 권한을 허용하시오.</string>
     <string name="app_exit_check_message">\'뒤로\' 버튼을 한 번 더 누르면 앱이 종료됩니다.</string>
 
-    <!-- sample -->
-    <string name="sample_phone_number">+821012345678</string>
-    <string name="sample_telecom">Android</string>
-    <string name="sample_device_brand">google</string>
-    <string name="sample_device_model">sdk_gphone_arm64</string>
-    <string name="sample_android_version">13</string>
-    <string name="sample_android_sdk_version">33</string>
-    <string name="sample_android_id">1234567890abcdef</string>
-    <string name="sample_imei">123456789012345</string>
-    <string name="sample_kernel">Linux armv</string>
-    <string name="sample_build_number">SP1A.111122.033</string>
-
 </resources>

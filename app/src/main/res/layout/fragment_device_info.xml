@@ -68,7 +68,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_device"
                 app:layout_constraintTop_toBottomOf="@id/tv_device_brand_title"
-                tools:text="@string/sample_device_brand" />
+                tools:text="google" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -118,7 +118,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_device_1"
                 app:layout_constraintTop_toBottomOf="@id/tv_device_model_title"
-                tools:text="@string/sample_device_model" />
+                tools:text="sdk_gphone_arm64" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -168,7 +168,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_android"
                 app:layout_constraintTop_toBottomOf="@id/tv_android_version_title"
-                tools:text="@string/sample_android_version" />
+                tools:text="13" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -218,7 +218,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_android_1"
                 app:layout_constraintTop_toBottomOf="@id/tv_android_sdk_title"
-                tools:text="@string/sample_android_sdk_version" />
+                tools:text="33" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -268,7 +268,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_android_2"
                 app:layout_constraintTop_toBottomOf="@id/tv_android_id_title"
-                tools:text="@string/sample_android_id" />
+                tools:text="1234567890abcdef" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -318,7 +318,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_imei"
                 app:layout_constraintTop_toBottomOf="@id/tv_imei_title"
-                tools:text="@string/sample_imei" />
+                tools:text="123456789012345" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -368,7 +368,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_kernel"
                 app:layout_constraintTop_toBottomOf="@id/tv_kernel_title"
-                tools:text="@string/sample_kernel" />
+                tools:text="Linux armv" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -418,7 +418,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_build"
                 app:layout_constraintTop_toBottomOf="@id/tv_build_number_title"
-                tools:text="@string/sample_build_number" />
+                tools:text="SP1A.111122.033" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

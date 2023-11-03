@@ -68,7 +68,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_call"
                 app:layout_constraintTop_toBottomOf="@id/tv_phoneNumber_title"
-                tools:text="@string/sample_phone_number" />
+                tools:text="+821012345678" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -118,7 +118,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_telecom"
                 app:layout_constraintTop_toBottomOf="@id/tv_telecom_title"
-                tools:text="@string/sample_telecom" />
+                tools:text="Android" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -168,7 +168,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_sim"
                 app:layout_constraintTop_toBottomOf="@id/tv_sim_serial_title"
-                tools:text="@string/sample_imei" />
+                tools:text="123456789012345" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
