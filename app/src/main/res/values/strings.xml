@@ -34,13 +34,7 @@
 
     <!-- dialog -->
     <string name="permission_denied_message">[설정] > [권한]에서 권한을 허용하시오.</string>
-    <string name="exit_app_dialog_title">앱 종료</string>
-    <string name="exit_app_dialog_message">앱을 종료합니다.</string>
-    <string name="check">확인</string>
-    <string name="cancel">취소</string>
-    <string name="close_button">닫기 버튼</string>
-    <string name="shutdown">종료</string>
-    <string name="shutdown_app">앱을 <font color='#f05555'>종료</font>하시겠습니까</string>
+    <string name="app_exit_check_message">\'뒤로\' 버튼을 한 번 더 누르면 앱이 종료됩니다.</string>
 
     <!-- sample -->
     <string name="sample_phone_number">+821012345678</string>

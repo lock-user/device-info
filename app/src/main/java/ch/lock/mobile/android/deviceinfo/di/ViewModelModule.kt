@@ -1,5 +1,6 @@
 package ch.lock.mobile.android.deviceinfo.di
 
+import ch.lock.mobile.android.deviceinfo.ui.screen.main.MainViewModel
 import ch.lock.mobile.android.deviceinfo.ui.screen.main.deviceinfo.DeviceInfoViewModel
 import ch.lock.mobile.android.deviceinfo.ui.screen.main.siminfo.SimInfoViewModel
 import ch.lock.mobile.android.deviceinfo.ui.screen.main.system.SystemViewModel
@@ -12,14 +13,18 @@ object ViewModelModule {
 
     @JvmStatic
     val INSTANCE: Module = module {
-
         // device info
         viewModel {
             DeviceInfoViewModel(
                 get()
             )
         }
-
+        // main
+        viewModel {
+            MainViewModel(
+                get()
+            )
+        }
         // setting
         viewModel {
             SettingViewModel(
@@ -27,21 +32,18 @@ object ViewModelModule {
                 get(),
             )
         }
-
         // sim info
         viewModel {
             SimInfoViewModel(
                 get()
             )
         }
-
         // system
         viewModel {
             SystemViewModel(
                 get()
             )
         }
-
     }
 
 }

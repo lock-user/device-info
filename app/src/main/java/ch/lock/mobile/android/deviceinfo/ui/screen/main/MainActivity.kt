@@ -11,15 +11,18 @@ import ch.lock.mobile.android.deviceinfo.LockNavigationDirections
 import ch.lock.mobile.android.deviceinfo.R
 import ch.lock.mobile.android.deviceinfo.ui.base.activity.BaseCompatActivity
 import ch.lock.mobile.android.deviceinfo.databinding.ActivityMainBinding
-import ch.lock.mobile.android.deviceinfo.ui.dialog.shutdown.ShutDownDialog
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingActivity
 import ch.lock.mobile.android.deviceinfo.ui.screen.setting.SettingViewModel
+import ch.lock.mobile.android.deviceinfo.utils.ResourceProvider
+import ch.lock.mobile.android.deviceinfo.utils.extension.observeBaseViewModelEvent
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseCompatActivity() {
 
     companion object {
         const val TAG: String = "MainActivity"
+        const val TIME_INTERVAL = 2_000L
 
         /**
          * create MainActivity intent
@@ -39,11 +42,16 @@ class MainActivity : BaseCompatActivity() {
         DataBindingUtil.setContentView(this, R.layout.activity_main)
     }
 
+    private val viewModel: MainViewModel by viewModel()
     private val settingViewModel: SettingViewModel by viewModel()
+
+    private val resourceProvider: ResourceProvider by inject()
 
     private val navController: NavController by lazy {
         (supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment).navController
     }
+
+    private var backWaitTime = 0L
 
     override val isScreenCaptureBlock: Boolean
         get() = initScreenCaptureBlock()
@@ -53,14 +61,20 @@ class MainActivity : BaseCompatActivity() {
 
         initBinding()
         initView()
+        initViewModel()
     }
 
     override fun onBackPressed() {
         // navigation view가 열려있을 때 뒤로가기 버튼을 누르면 navigation view만 닫기
         if (binding.navDrawer.isOpen) {
             binding.navDrawer.close()
+            return
+        }
+        if (System.currentTimeMillis() - backWaitTime <= TIME_INTERVAL) {
+            viewModel.exitApp()
         } else {
-            exitAppDialog()
+            backWaitTime = System.currentTimeMillis()
+            viewModel.showToast(resourceProvider.getString(R.string.app_exit_check_message))
         }
     }
 
@@ -100,11 +114,8 @@ class MainActivity : BaseCompatActivity() {
         }
     }
 
-    /**
-     * 앱 종료 다이얼로그 표시
-     */
-    private fun exitAppDialog() {
-        ShutDownDialog.newInstance().show(supportFragmentManager, ShutDownDialog.TAG)
+    private fun initViewModel() {
+        observeBaseViewModelEvent(viewModel)
     }
 
     /**
