@@ -41,8 +41,8 @@ android {
             isShrinkResources = false
             aaptOptions.cruncherEnabled = false
 
-            versionNameSuffix = "-dbg"
-            applicationIdSuffix = ".dbg"
+            versionNameSuffix = "-dev"
+            applicationIdSuffix = ".dev"
             signingConfig = signingConfigs.getByName("keystore")
 
             setProguardFiles(
