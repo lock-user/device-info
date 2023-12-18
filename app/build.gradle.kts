@@ -127,6 +127,7 @@ dependencies {
     `koin-compose`
     `koin-test`
 
+    `navigation-compose`
     `navigation-fragment`
     `navigation-runtime`
     `navigation-ui`

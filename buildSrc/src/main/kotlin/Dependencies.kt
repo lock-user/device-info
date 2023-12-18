@@ -51,6 +51,7 @@ val DependencyHandler.`lifecycle-common` get() = implementation("androidx.lifecy
 val DependencyHandler.`square-logcat` get() = implementation("com.squareup.logcat:logcat:${`square-logcat version`}")
 
 // Navigation
+val DependencyHandler.`navigation-compose` get() = implementation("androidx.navigation:navigation-compose:${`navigation version`}")
 val DependencyHandler.`navigation-fragment` get() = implementation("androidx.navigation:navigation-fragment-ktx:${`navigation version`}")
 val DependencyHandler.`navigation-runtime` get() = implementation("androidx.navigation:navigation-runtime-ktx:${`navigation version`}")
 val DependencyHandler.`navigation-ui` get() = implementation("androidx.navigation:navigation-ui-ktx:${`navigation version`}")
